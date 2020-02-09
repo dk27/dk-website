@@ -9,56 +9,74 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js"></script> 
+    <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="wrapper">
             <nav>
                 <ul class="firstUL">
                     <li><a href="index.html">home</a></li>
                     <li><a href="#" class="about">about</a></li>
-                    <li><a href="#" target=_blank>archive</a></li>
-                    <li><a href="#" target=_blank>contact</a></li>
+                    <li><a href="#">archive</a></li>
+                    <li><a href="#" class="contact">contact</a></li>
                 </ul>
             </nav>
-            <h1>Daria Kostyannikova</h1>
-            <h2>Data Science Blog</h2>
-        </div>
+            <div class="wrapper">
+                <h1>Don't you love data?</h1>
+                <h2>Data Science Blog</h2>
+            </div>
+
     </header>
     <main>
         <div class="wrapper">
             <section class="js-main">
-                <div class="container_one">
-                    <div>
-                        <h3>NHL Data Exploration</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio libero enim quod error maiores voluptatum nulla culpa unde commodi, natus deleniti dolores ipsam praesentium sed quae molestiae. Odio, dolores incidunt.</p>
-                        <p class="js-click">click to see more</p>
+
+                <div class="container-post">
+                    <h3>SpaceX Data Exploration</h3>
+                    <div class="img-div">
+                        <img src="styles/spacex-PIOgkhaF3WA-unsplash.jpg" alt="space X photo">
                     </div>
-                    <div>
-                        <h3>Coming Soon</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti vitae doloribus consequuntur adipisci? Consequatur vel, qui iste neque, incidunt aliquam doloribus dolorem cumque, nemo perspiciatis quasi quibusdam rerum ipsam nulla!</p>
-                        <p class="js-click">click to see more</p>
-                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio libero enim quod error maiores voluptatum nulla culpa unde commodi, natus deleniti dolores ipsam praesentium sed quae molestiae. Odio, dolores incidunt.</p>
+                    <a href="#" class="js-click">click to see more</a>
                 </div>
-                <div class="container_two">
-                    <div>
-                        <h3>Coming Soon</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius unde odit incidunt cumque accusamus, vitae quod tempora voluptatem illum aliquam itaque veritatis totam, maxime dicta illo obcaecati deserunt quia ad.</p>
-                        <p class="js-click">click to see more</p>
+
+                <div class="container-post">
+                    <h3>Introduction to Importing Data in Python</h3>
+                    <div class="img-div">
+                        <img src="styles/michael-payne-jkBvXKwr4MY-unsplash.jpg" alt="panda image" title="Photo by Michael Payne">
+                        
                     </div>
-                    <div>
-                        <h3>Coming Soon</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem voluptas ea in distinctio iusto vitae amet. Repellendus pariatur ducimus, blanditiis itaque omnis laudantium, consectetur facilis nesciunt aliquam officia commodi debitis.</p>
-                        <p class="js-click">click to see more</p>
-                    </div>
+                    <p class="main-display">Gentle introduction to importing various data formats into Python. This tutorial will cover CSV files, relational databases (MySQL, MS SQL Server, Oracle), JSON and XML formats.</p>
+                    <a href="data-pull.html" class="js-click">click to see more</a>
                 </div>
+
             </section>
             <section class="js-about">
                 <h3>About Me</h3>
-                <p>I'm a Data Scientist who is passionate about data science and analytics. My background is in Economics and Statistics, and I have been working as a Data Scientist for a mid-sized insurance company in the US for over six years. I truly enjoy doing what I'm doing and working on a variety of different data science whether it's a data prepping, machine learning or development project. In the last six years I have learned a lot about insurance, data science and programming. </p>
-                <p>I'd like to share tutorials, links to articles and other data science related things on my blog.</p>
-                <p>Besides data science, I love to spend my free time with my cat, CrossFit and travelling the world.</p>
+                <p>
+                    I'm a Data Scientist who is passionate about data science and analytics. My background is in Economics and Statistics. While in grad school, I became really interested in Time Series analysis and wrote my master's thesis on causality testing which can be found <a href="https://academicworks.cuny.edu/cc_etds_theses/93/" target="_blank" class="link">here</a>.
+                </p>
+                <p>
+                    For the last 6 years, I have been working as a Data Scientist for a mid-sized insurance company in the US. Five of which were spent in New Jersey and now I'm working from our sister company's office in Toronto. I truly enjoy doing what I'm doing and working on a variety of different data science whether it's a data prepping, machine learning or development project. In the last six years I have learned a lot about insurance, data science and programming. </p>
+                <p>
 
+                    The reason for starting this blog is mainly to share things that I've learned. I'm also planning on learning new things and blogging my experience here which is probably one of the best ways for me to remember something and hopefully would be helpful to someone else. I'd like to share tutorials, links to articles and other data science related things on my blog.
+                </p>
+                <p>
+                    Besides data science, I love to spend my free time with my cat, CrossFit and travelling the world.
+                </p>
+                <p>
+                    I'm still very new to web development, so for now this is just a static web site that doesn't support commenting, but as I'm learning more about webdev, I'm sure eventually it will have a powerful server side as well. For now, if you'd like to leave a comment or reach out, messaging on LinkedIn would be the best.
+                </p>
+                <p>I hope you enjoy my Data Science blog!</p>
+
+            </section>
+            <section class="js-contact">
+                <ul>
+                    <li><i class="fab fa-linkedin"></i><a href="www.linkedin.com/in/daria-kostyannikova-97769571" class="contact-me link">www.linkedin.com/in/daria-kostyannikova-97769571</a></li>
+                    <li><i class="fab fa-github"></i><a href="https://github.com/dk27" class="contact-me link">https://github.com/dk27</a></li>
+                    <li>Or send me a pigeon?</li>
+                </ul>
             </section>
         </div>
     </main>
