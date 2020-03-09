@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DK</title>
+    <title>Don't You Love Data?</title>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js"></script> 
     <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
+    <!-- favicon -->
+    
 </head>
 <body>
     <header>
-            <nav>
+            <nav class="main-nav">
+                <div><a href="index.html"><img src="styles/logo2.jpg" alt="logo" class="logo"></a></div>
                 <ul class="firstUL">
+                    <button class="exit-responsive">
+						<i class="fas fa-times"></i>
+						<p class="sr-only">Click me to close the navigation.</p>
+					</button>
                     <li><a href="index.html">home</a></li>
-                    <li><a href="#" class="about">about</a></li>
+                    <li><a href="about.html" class="about">about</a></li>
                     <li><a href="#">archive</a></li>
-                    <li><a href="#" class="contact">contact</a></li>
+                    <li><a href="contact.html" class="contact">contact</a></li>
+                    <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button>
                 </ul>
             </nav>
-            <div class="wrapper">
+            <div class="wrapper header-flex">
                 <h1>Don't you love data?</h1>
                 <h2>Data Science Blog</h2>
             </div>
@@ -32,55 +40,31 @@
             <section class="js-main">
 
                 <div class="container-post">
-                    <h3>SpaceX Data Exploration</h3>
+                    <h3>Rambling on Data Science Tools. My 5 Cents</h3>
                     <div class="img-div">
-                        <img src="styles/spacex-PIOgkhaF3WA-unsplash.jpg" alt="space X photo">
+                        <img src="styles/tools-for-carpentry.jpg" alt="space X photo">
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio libero enim quod error maiores voluptatum nulla culpa unde commodi, natus deleniti dolores ipsam praesentium sed quae molestiae. Odio, dolores incidunt.</p>
-                    <a href="#" class="js-click">click to see more</a>
+                    <p>Welcome to my blog! In this post, I'll cover most commonly used data science tools, not so common tools that I've used, and mention resources that could help you learn them. </p>
+                    <a href="p1-datascience.html" class="js-click">click to see more</a>
                 </div>
 
-                <div class="container-post">
-                    <h3>Introduction to Importing Data in Python</h3>
+                <div class="container-post last-reactive">
+                    <h3>Introduction to Importing Data in Python (Part 1)</h3>
                     <div class="img-div">
                         <img src="styles/michael-payne-jkBvXKwr4MY-unsplash.jpg" alt="panda image" title="Photo by Michael Payne">
                         
                     </div>
-                    <p class="main-display">Gentle introduction to importing various data formats into Python. This tutorial will cover CSV files, relational databases (MySQL, MS SQL Server, Oracle), JSON and XML formats.</p>
-                    <a href="data-pull.html" class="js-click">click to see more</a>
+                    <p class="main-display">Gentle introduction to importing various data formats into Python. This tutorial will cover CSV files and relational databases (MySQL, MS SQL Server, Oracle).</p>
+                    <a href="data-pull.html" class="js-click ">click to see more</a>
                 </div>
 
             </section>
-            <section class="js-about">
-                <h3>About Me</h3>
-                <p>
-                    I'm a Data Scientist who is passionate about data science and analytics. My background is in Economics and Statistics. While in grad school, I became really interested in Time Series analysis and wrote my master's thesis on causality testing which can be found <a href="https://academicworks.cuny.edu/cc_etds_theses/93/" target="_blank" class="link">here</a>.
-                </p>
-                <p>
-                    For the last 6 years, I have been working as a Data Scientist for a mid-sized insurance company in the US. Five of which were spent in New Jersey and now I'm working from our sister company's office in Toronto. I truly enjoy doing what I'm doing and working on a variety of different data science whether it's a data prepping, machine learning or development project. In the last six years I have learned a lot about insurance, data science and programming. </p>
-                <p>
-
-                    The reason for starting this blog is mainly to share things that I've learned. I'm also planning on learning new things and blogging my experience here which is probably one of the best ways for me to remember something and hopefully would be helpful to someone else. I'd like to share tutorials, links to articles and other data science related things on my blog.
-                </p>
-                <p>
-                    Besides data science, I love to spend my free time with my cat, CrossFit and travelling the world.
-                </p>
-                <p>
-                    I'm still very new to web development, so for now this is just a static web site that doesn't support commenting, but as I'm learning more about webdev, I'm sure eventually it will have a powerful server side as well. For now, if you'd like to leave a comment or reach out, messaging on LinkedIn would be the best.
-                </p>
-                <p>I hope you enjoy my Data Science blog!</p>
-
-            </section>
-            <section class="js-contact">
-                <ul>
-                    <li><i class="fab fa-linkedin"></i><a href="www.linkedin.com/in/daria-kostyannikova-97769571" class="contact-me link">www.linkedin.com/in/daria-kostyannikova-97769571</a></li>
-                    <li><i class="fab fa-github"></i><a href="https://github.com/dk27" class="contact-me link">https://github.com/dk27</a></li>
-                    <li>Or send me a pigeon?</li>
-                </ul>
-            </section>
+            
         </div>
     </main>
-    
+    <!-- <footer>
+            <p>Copyright 2020 Don't You Love Data</p>
+    </footer> -->
     
 </body>
 </html>

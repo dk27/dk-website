@@ -21,6 +21,27 @@ df.head()
 # we can try dropna function which would drop rows where at least one element is NA
 df = df.dropna()
 
+# relational databases
+import pypyodbc
+import pymysql
+import cx_Oracle
+
+# pypyodbc
+conn_mssql = pypyodbc.connect("DRIVER={SQL Server};SERVER=server_name;UID=user_name;PWD=password;DATABASE=db")
+cursor_mssql = conn_mssql.cursor()
+query = ("select * from table_name")
+cursor_mssql.execute(query)
+# convert the output into a dataframe
+df = pd.DataFrame(cursor_mssql.fetchall())
+# pymysql
+conn_mysql = pymysql.connect(host='host_name', user='user', password = 'pwd', db = 'db')
+cursor_mysql = conn_mysql.cursor()
+cursor_mysql.execute(query)
+df = pd.DataFrame(cursor_mysql.fetchall())
+# Oracle
+
+
+
 url = "https://api.spacexdata.com/v3/launches"
 r = requests.get(url)
 spacexdata = json.loads(r.text)

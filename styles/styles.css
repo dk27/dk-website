@@ -16,7 +16,7 @@ ul {
 
 
 body {
-    height: 100vh;
+    /* height: 100vh; */
     font-size: 1.6rem;
     font-family: 'Lora', serif;
     background-color: #f1f8f9;
@@ -37,16 +37,27 @@ img {
 /* header */
 
 header {
-    height: 20vh;
+    /* height: 20vh; */
     font-family: 'Indie Flower', cursive;
     background-color: #fff;
     border-bottom: 1px solid #d3d8d9;
 
+
+
 }
+
+.logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+/* .header-flex {
+    display: flex;
+    flex-direction: row;
+} */
 
 .link {
     font-style: italic;
-    text-transform: lowercase;
+    text-transform: capitalize;
     font-weight: 200;
     color: #10a4d4;
 }
@@ -56,6 +67,10 @@ li {
     margin-top: 10px;
    
 }
+.list{
+    font-weight: bold;
+}
+
 
 a {
     text-decoration: none;
@@ -69,9 +84,8 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #10a4d4;
-
+    justify-content: space-between;
+    width: 80%;
 }
 h1 {
     margin-top: 15px;
@@ -79,6 +93,15 @@ h1 {
 h1, h2 {
     text-align: center;
     padding: 5px;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #10a4d4;
+    justify-content: space-between;
+    padding: 15px;
+
 }
 
 .page-title {
@@ -89,10 +112,10 @@ h1, h2 {
 
 /* main */
 
-main {
+/* main {
 
     height: 78vh;
-}
+} */
 
 
 
@@ -103,7 +126,7 @@ h3 {
 p {
     margin-top: 10px;
     font-size: 1.8rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 .js-main {
@@ -127,7 +150,7 @@ p {
     text-align: center;
 }
  .img-div img {
-     width: 90%;
+     /* width: 90%; */
      height: 200px;
  }
 
@@ -142,7 +165,7 @@ p {
     padding: 20px;
  }
 .js-about, .js-contact {
-    display: none;
+
     padding: 10px;
 
 }
@@ -173,8 +196,177 @@ p {
     color: #10a4d4;
 }
 
+.blue {
+    color: #10a4d4;
+}
+
 .contact-me {
     /* color: #000;
     font-size: 1.8rem; */
     margin-left: 20px;
+    text-transform: none;
+    font-weight: 200;
+    color: #10a4d4;
+}
+.break {
+    margin-top: 45px;
+}
+.last-p {
+    /* margin-top: 10px; */
+    margin-bottom: 40px;
+}
+
+/* footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+} */
+/* footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+} */
+
+footer p {
+    /* text-align: center; */
+    font-size: 1.4rem;
+    color: grey;
+    /* margin-bottom: 15px;
+    position: absolute;
+    bottom: 0; */
+
+}
+
+
+button:hover,
+button:focus {
+	color: #000;
+}
+
+button {
+	background: none;
+	border: none;
+	color: #10a4d4;
+}
+
+.hamburger,
+.exit-responsive {
+	display: none;
+}
+
+.exit-responsive {
+	position: relative;
+	top: 30px;
+	left: 30px;
+}
+
+
+.h3-center {
+    text-align: center;
+}
+
+.p1-datascience-flex {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.p1-datascience-flex div {
+    width: 70%;
+    margin-right: 20px;
+}
+
+.p1-datascience-flex img {
+    width: 30%;
+    max-height: 300px;
+}
+
+@media (max-width: 768px) {
+    a, p {
+        font-size: 1.6rem;
+    }
+    p {
+        line-height: 1.6;
+    }
+
+    .js-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;;
+    }
+
+    .container-post {
+        width: 80%;
+    }
+
+    .last-reactive {
+        margin-bottom: 15px;
+    }
+    li {
+        list-style: none;
+        padding: 5px;
+        margin-top: 0;
+    }
+    
+    /* .firstUL {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: end;
+        width: 80%;
+    }
+    .firstUL li {
+        display:none;
+    }
+    .hamburger {
+		display: block;
+        font-size: 25px;
+        color:  #fff;
+    } */
+
+
+    .p1-datascience-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .p1-datascience-flex div {
+        width: 100%;
+        order: 2;
+    }
+    .p1-datascience-flex img {
+        width: 50%;
+        order: 1;
+    }    
+}
+
+@media (max-width: 380px) {
+
+    body {
+        font-size: 1.6rem;
+    }
+    a {
+        font-size: 1.3rem;
+    }
+    /* p {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    } */
+
+
+    .container-post {
+        width: 95%;
+        margin-top: 25px;
+    }
+
+    .p1-datascience-flex img {
+        width: 70%;
+        order: 1;
+    }  
 }

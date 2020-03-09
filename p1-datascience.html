@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't You Love Data?</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="index.html"><img src="styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="index.html">home</a></li>
+                <li><a href="about.html" class="about">about</a></li>
+                <li><a href="#">archive</a></li>
+                <li><a href="contact.html" class="contact">contact</a></li>
+                <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button>
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+
+    </header>
+    <main>
+        <div class="wrapper">
+            <h2 class="page-title">Rambling on Data Science Tools. My 5 Cents</h2>
+            <h3>February 28th, 2020</h3>
+            <div class="p1-datascience-flex">
+                <div>
+                    <p>If you are an aspiring data scientist, one of the first things you'll need to figure out is which tool or language to learn. In this post, I'll cover most common tools used in data science, but before I list the tools, I'd like to clarify my definition of data science. </p>
+                    <p>There is obviously <b>machine learning</b> which excites a lot of people, but machine learning is not the only part of data science. You can't build ML models without prepping the data first. </p> 
+                    <p> It involves accessing the data from different sources, figuring out how to join it all together, filling out the blanks and sometimes fixing data inaccuracies. I'm sure many data scientists would agree that <b>data preparation</b> is the most time consuming part of most data science projects. </p>
+                    <p>It also involves <b>model deployment</b>. While you can delegate model deployment or data prepping to someone else, I strongly believe that it's a good practice for a data scientist to be involved in every stage from data preparation, model creation, to model deployment because some companies may have data analysts, data engineers, machine learning engineers and data scientists, in others, you may need to wear a variety of hats and possess all these skills. </p>
+                </div>
+                <img src="styles/tools-for-carpentry.jpg" alt="placeholder for tools image">
+            </div>
+            <h3 class="h3-center">Data Science Tools</h3>
+            <p>There is a variety of data science tools. Some of them are <b>open source</b> others cost a fortune. Some industries are known for using certain software. If you are new to data science, it might be confusing figuring out where to start. Should you learn R? Is Python sufficient? What to use for data preparation? Below is an overview of a few tools I've worked with, my opinion on how important they are and how I learned them. </p>
+            <h4 class="blue">Python</h4>
+            <p>Python has become one of the most famous data science tools. It didn't really start as one. Python is a powerful high-level programming language that has been around for over 3 decades. It can be used for back end, web applications, scientific computing, plotting and of course data science. While there are a variety of data science libraries (pandas, matplotlib, scikit-learn, etc.), I strongly encourage every aspiring data scientist to have a solid knowledge of <b>programing foundations</b> in Python. Knowing how to create functions, get comfortable with <b>native data objects</b> (lists, dictionaries, tuples), conditional logic and loops. While it sounds basic, you would be surprised how many people use Python and don't really know these concepts well.</p>
+            <p>How do you learn Python? I started with a few online courses that were helpful but also confusing. What really helped me is getting a basic understanding of the syntax and working on an actual project in Python during which I practically googled how to do every task I tried to accomplish. Once I gained some understanding of what I was doing, I took another online course which made more sense to me after spending some time working in Python. The courses I took are <a href="https://www.codecademy.com/" class="link" target="_blank">Codecademy</a> and <a href="https://www.udacity.com/" class="link" target="_blank">Udacity</a>.</p>
+            <p>Overall, I think you should definitely learn Python. Even if you end up not using it for data preparation or maybe not even model creation, you might find yourself needing it to deploy a model you built.</p>
+            <h4 class="blue">SQL</h4>
+            <p>While you can't build predictive models in SQL, you really should get comfortable with writing <b>SQL queries</b>. Knowing <code>select</code>, different types of join, <code>where, case when, group by, union</code> and some basic SQL functions should be a good start. A lot of companies have their data reside in <b>relational databases</b> so knowing how to extract and manipulate the data is absolutely important.</p>
+            <p>Most of my SQL knowledge was gained by observing my actuarial colleagues, looking through their scripts and trying to understand them. I also took an online course on Lynda (I'm not sure if Lynda still exists, but there should be tons of information on the Internet).</p>
+            <h4 class="blue">Cloud Platforms</h4>
+            <p>I'll have a separate post on this since this one is getting pretty long. Cloud space is shared by three giants -- Amazon Web Services (AWS), Google Cloud Platform (GCP) and Microsoft Azure, and you should have some exposure to cloud services.</p>
+            <h4 class="blue">R</h4>
+            <p>There is a big debate in data science community about what's better R or Python. While Python seems to be getting more popular these days, we should not underestimate R. There are modeling methodologies (typically econometrics or statistical models) that are not supported by Python but supported by R which is understandable since R is a <b>statistical computing</b> language. Not every model we build is a classification model, some have continuous targets that sometimes follow specific distributions and require certain modeling techniques.</p>
+            <p>Overall, R is still a powerful modeling tool. One big disadvantage is deploying models built in R. Chances are these models will have to be deployed using Python.</p>
+            <p>There are helpful R courses on <a href="https://www.coursera.org/" class="link" target="_blank">Coursera</a>. I took <a href="https://www.coursera.org/learn/r-programming" class="link" tagret="_blank">R programming</a> several years ago. There is a paid certificate option or you can take the course for free but you won't have access to its quizzes.  There are also other Online Platforms, such as <a href="https://www.udemy.com/" class="link" target="_blank">Udemy</a> and <a href="https://www.codecademy.com/" class="link" target="_blank">Codecademy</a>. Udemy courses aren't free, but they seem to have major discounts from time to time where you can purchase a course for about $10.</p>
+            <h4 class="blue">SAS</h4>
+            <p>In my first role, we heavily used SAS for data preparation, visualization, modeling and deployment purposes. It required to learn some syntax which I found simpler than R or Python. Some of the products are point and click (Enterprise Miner) which allowed you to build predictive models.</p>
+            <p>I like SAS for data preparation purposes. I think certain tasks easier accomplished in SAS than in SQL and with less code. When it comes to modeling techniques, it has limited support of modeling algorithms and it takes time for SAS to implement new algorithms which usually come under a new SAS version. Did I mention the cost? SAS is expensive! There are some industries that heavily rely on SAS, so you may find yourself learning and using it at some point. It's not difficult to learn, and SAS typically offers courses and certificates which are not free but your company may have educational credits from SAS that can be used toward these courses.</p>
+            <h4 class="blue">Julia</h4>
+            <p>Julia is definitely getting popular in data science community. It combines advantages and syntax of both R and Python. It also appears to be computationally more efficient than R or Python. Unfortunately, there are fewer resources on learning Julia, so I would recommend to maybe learn it after you get proficient with R or Python.</p>
+            <p>I do plan on writing Julia posts at some point in the future, so stay tuned!</p>
+            <h4 class="blue">SPSS</h4>
+            <p>The first analytics/predictive modeling tool I encountered was SPSS in graduate school. Back then its capabilities were limited, and we hardly did anything aside from descriptive statistics, hypothesis testing and logistic regressions in it.</p>
+            <p>I also saw a demo on SPSS a few years back, and it looked more promising. That said, I wouldn't recommend focusing on SPSS as your primary data science tool unless your organization requires it. In most cases, Python, R, and Cloud Services can be a good alternative.</p>
+
+            <p class="break">A few more thoughts I wanted to share on <b>online courses</b>. If you are taking an online course, make sure to not just strictly follow course assignments, but I also encourage you to try exploring different ways you can get to the desired output. Also, make sure you consistently spend time practicing coding especially in the beginning while you still get comfortable with the syntax and programming concepts. Perhaps, you can find a topic that excites you, download relevant data and see what you can do with it in language/tool you are learning. </p>
+            <p >One last thing about <b>course certificates</b>. Sometimes certificate options provide you with access to course quizzes which may be useful. If you think that a certificate will increase your odds of getting a data science job, unfortunately it probably won't. What can definitely help is having an up-to-date <b>git repository</b> where you can demonstrate your coding/data science skills.</p>
+            <p class="last-p">I hope this was somewhat useful and keep learning!</p>
+            
+        </div>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p>Copyright 2020 Don't You Love Data</p>
+        </div>
+    </footer>
+</body>
+
+</html>
