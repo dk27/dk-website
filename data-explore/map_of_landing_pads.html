@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c1a8eb62592443abb5a10069bd451f0d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_c1a8eb62592443abb5a10069bd451f0d" ></div>
+        
+</body>
+<script>    
+    
+            var map_c1a8eb62592443abb5a10069bd451f0d = L.map(
+                "map_c1a8eb62592443abb5a10069bd451f0d",
+                {
+                    center: [39.8282, -98.5795],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_df59d91fc52a486c8432c8bc6a5916b5 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+            var marker_4443c4bdbbb243b19367c8154ebe166b = L.marker(
+                [28.485833, -80.544444],
+                {}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+        var popup_e2815c8e900040d38a7d6dec09a216be = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e0497cc51ae8438bb00458b2200c993c = $(`<div id="html_e0497cc51ae8438bb00458b2200c993c" style="width: 100.0%; height: 100.0%;">Cape Canaveral</div>`)[0];
+            popup_e2815c8e900040d38a7d6dec09a216be.setContent(html_e0497cc51ae8438bb00458b2200c993c);
+        
+
+        marker_4443c4bdbbb243b19367c8154ebe166b.bindPopup(popup_e2815c8e900040d38a7d6dec09a216be)
+        ;
+
+        
+    
+    
+            var marker_53957c2c00944474932bdd0f647d8c7e = L.marker(
+                [28.485833, -80.544444],
+                {}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+        var popup_5289759b05414dba942e49f6257a72d0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9b2c768785134aa4a1f15da54c912187 = $(`<div id="html_9b2c768785134aa4a1f15da54c912187" style="width: 100.0%; height: 100.0%;">Cape Canaveral</div>`)[0];
+            popup_5289759b05414dba942e49f6257a72d0.setContent(html_9b2c768785134aa4a1f15da54c912187);
+        
+
+        marker_53957c2c00944474932bdd0f647d8c7e.bindPopup(popup_5289759b05414dba942e49f6257a72d0)
+        ;
+
+        
+    
+    
+            var marker_17215e9137e04636930fb14ad5d30fa5 = L.marker(
+                [34.632989, -120.615167],
+                {}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+        var popup_9b3b940d59be4ac1a2483b4edc2420b5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_482b90dd020c4a5cb5c06c75a8950627 = $(`<div id="html_482b90dd020c4a5cb5c06c75a8950627" style="width: 100.0%; height: 100.0%;">Vandenberg Air Force Base</div>`)[0];
+            popup_9b3b940d59be4ac1a2483b4edc2420b5.setContent(html_482b90dd020c4a5cb5c06c75a8950627);
+        
+
+        marker_17215e9137e04636930fb14ad5d30fa5.bindPopup(popup_9b3b940d59be4ac1a2483b4edc2420b5)
+        ;
+
+        
+    
+    
+            var marker_34b297d62b60443d967ab60127702d73 = L.marker(
+                [28.4104, -80.6188],
+                {}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+        var popup_21415aa1ec4b45e9ab9f08b2ed34ebeb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_553116aa01564b159293cfb65091f570 = $(`<div id="html_553116aa01564b159293cfb65091f570" style="width: 100.0%; height: 100.0%;">Port Canaveral</div>`)[0];
+            popup_21415aa1ec4b45e9ab9f08b2ed34ebeb.setContent(html_553116aa01564b159293cfb65091f570);
+        
+
+        marker_34b297d62b60443d967ab60127702d73.bindPopup(popup_21415aa1ec4b45e9ab9f08b2ed34ebeb)
+        ;
+
+        
+    
+    
+            var marker_f752bddbb3fa4a81bede53f432c62bf2 = L.marker(
+                [28.4104, -80.6188],
+                {}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+        var popup_cb1a8382722d4413afe4b330ad75253b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4a54bc4098044d2aa13324395e8c77a6 = $(`<div id="html_4a54bc4098044d2aa13324395e8c77a6" style="width: 100.0%; height: 100.0%;">Port Canaveral</div>`)[0];
+            popup_cb1a8382722d4413afe4b330ad75253b.setContent(html_4a54bc4098044d2aa13324395e8c77a6);
+        
+
+        marker_f752bddbb3fa4a81bede53f432c62bf2.bindPopup(popup_cb1a8382722d4413afe4b330ad75253b)
+        ;
+
+        
+    
+    
+            var marker_d1ec61e6712c43a68822d71ced0ac622 = L.marker(
+                [33.7291858, -118.262015],
+                {}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+        var popup_d79864e2aa1141ecbe4d9ac79b588319 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7752c6299c2745fdb4ac27c95aec3cd8 = $(`<div id="html_7752c6299c2745fdb4ac27c95aec3cd8" style="width: 100.0%; height: 100.0%;">Port of Los Angeles</div>`)[0];
+            popup_d79864e2aa1141ecbe4d9ac79b588319.setContent(html_7752c6299c2745fdb4ac27c95aec3cd8);
+        
+
+        marker_d1ec61e6712c43a68822d71ced0ac622.bindPopup(popup_d79864e2aa1141ecbe4d9ac79b588319)
+        ;
+
+        
+    
+    
+            var marker_66826f3685a54449958b616f8281b6c0 = L.marker(
+                [28.4104, -80.6188],
+                {}
+            ).addTo(map_c1a8eb62592443abb5a10069bd451f0d);
+        
+    
+        var popup_8bc8e207219e4c57a151fbe5fe73edc7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_68ed6e96eb544125ada950f705de5217 = $(`<div id="html_68ed6e96eb544125ada950f705de5217" style="width: 100.0%; height: 100.0%;">Port Canaveral</div>`)[0];
+            popup_8bc8e207219e4c57a151fbe5fe73edc7.setContent(html_68ed6e96eb544125ada950f705de5217);
+        
+
+        marker_66826f3685a54449958b616f8281b6c0.bindPopup(popup_8bc8e207219e4c57a151fbe5fe73edc7)
+        ;
+
+        
+    
+</script>

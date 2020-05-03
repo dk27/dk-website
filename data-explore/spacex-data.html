@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SpaceX Data</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../main.js"></script> 
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="../index.html"><img src="../styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html" class="about">about</a></li>
+                <li><a href="../archive.html">archive</a></li>
+                <li><a href="../contact.html" class="contact">contact</a></li>
+                <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button>
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="spacex">
+                <h2 class="page-title">SpaceX Data Exploration</h2>
+                <h3>April 12th, 2020</h3>
+                <p>As I was working on <a href="../tutorials/p2-datapull2.html" target="_blank" class="link">data pulling tutorial</a>, I discovered a fun <a href="https://docs.spacexdata.com/?version=latest" target="_blank" class="link">SpaceX</a> Api. Here is my take on playing with SpaceX Launches data. As I previously mentioned, we start by reading <b>API documentation</b>. There is a lot of data available about SpaceX general information, capsules, history, and so on.</p>
+                <p>Data from all endoints can be accessed without authorization and with a <b>GET</b> request. Some endpoints like launches provide tons of information. I started exploring the info endpoint. It provides some basic information about the company. For instance, it lists Elon Musk as SpaceX founder, CEO and CTO. You can also find when the company was founded, how many employees it has, its valuation (there are a lot of zeros in it) and the company summary. What I learned from it is that SpaceX would like to enable people to live on other planets. I recently read that humans could potentially live on Titan. Not a planet, but perhaps worth considering, Elon? </p>
+                <div class="csv-pull">
+                    <img src="../styles/space-x-info.PNG" alt="screenshot of SpaceX Info response">
+                </div>
+                <p>History endpoint provides some basic inforation on what looks like main events in SpaceX history with event dates varying from 2008 to 2018. I found <a href="https://matplotlib.org/3.2.1/gallery/lines_bars_and_markers/timeline.html" target="_blank" class="link">this link</a> really helpful to plot the chart below. </p>
+                <div class="csv-pull">
+                    <img src="../styles/spacex-timeline.png" alt="screenshot of SpaceX Timeline">
+                </div>
+                <p>We can also look at landing pads endpoint. There are only 7 of them but some of them have odd names ("Of Course I still Love you" in Port Canaveral and "Just Read the Instructions" in Port of Los Angeles). 5 of the landing pads are in Florida (Cape and Port Canaveral) and 2 are in California (Vandenberg Air Force Base and Port of Los Angeles). I used <code>Folium</code> to plot a map with all landing pads which is not super exciting <a href="map_of_landing_pads.html" class="link" target="_blank">landing pads map</a>. The endpoint also provides attempted and successful attempts for each landing pad.</p>
+                <div class="csv-pull">
+                    <img src="../styles/space-x-landing-attempts.png" alt="screenshot of SpaceX Landing attempts">
+                </div>
+                <p>In the consequent post, I'll look at other endpoints some of which contain a lot more information. Full code for this post can be found <a href="" class="link" target="_blank">here</a> </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

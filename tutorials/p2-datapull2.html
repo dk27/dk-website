@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Don't You Love Data?</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../main.js"></script> 
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="../index.html"><img src="../styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html" class="about">about</a></li>
+                <li><a href="../archive.html">archive</a></li>
+                <li><a href="../contact.html" class="contact">contact</a></li>
+                <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button>
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section>
+                <div class="data-pulling-section">
+                    <h2 class="page-title">Intoduction to Importing Data in Python. Part 2</h2>
+                    <h3>March 15th, 2020</h3>
+                    <p>In my <a href="data-pull.html" class="link">Importing Data in Python (part 1)</a> post I talked about importing tabular data into Python. Coming from a Statistics/Econometrics background, I mainly used tabular data for analysis, so it definitely took some time getting used to working with non-tabular data such as JSON and XML.</p>
+                    <p>Why is it important to know how to work with JSON or XML data? If you ever find yourself in a situation where you need to access data via an API (<b>Application Programming Interface</b>),your output will either be returned in a JSON or XML format, and knowing how to extract information from an API response is an absolutely useful skill.</p>
+                    <p>In order to access data from an API, a few things are needed:</p>
+                    <ul>
+                        <li>&check; <b>URL</b> where the data resides</li>
+                        <li>&check; <b>Authentication</b> may be required and it comes in a variety of forms (Bearer Token, Oath, etc.)</li>
+                        <li>&check; <b>Method</b> will typically be GET or POST</li>
+                        <li>&check; <b>Parameters</b> or <b>Request Body</b></li>
+                    </ul>
+                    <h3 class="blue">JSON</h3>
+                    <p>JSON (<b>JavaScript Object Notation</b>) is a file format that stores information in key-value pairs where each key is enclosed into double quotes and value can be a string, integer, float, boolean, another object or even an array of objects, integers or strings. It's a convenient way to store information and requires mainly knowing how to extract certain attributes from a dictionary or object</p>
+                    <p>Below I will show how to send a request to a REST API in Python, load a JSON response, parse it and convert it into a dataframe. I will use <a href="https://docs.openaq.org/" class="link" target="_blank">Open Air Quality</a> API in this example. If you look at the documentation (which you should always review before working with APIs), there are several types of data you can get. I will use countries API, where the returned data looks like this: </p>
+                    <div class="csv-pull">
+                        <img src="../styles/countries-json.PNG" alt="screenshot of JSON file">
+                    </div>
+                    <p>To access the data from this API, we will use <code>get</code> methods from <code>requests</code> library. To view the returned string, we can use <code>text</code> method. We can't easily extract information from a string, so we'll need to convert it to a dictionary with <code>load</code> function from <code>json</code> package.</p>
+                    <p>We can see that the response contains a key "meta", and its value is a dictionary itself. We can skip this dictionary as it doesn't contain any useful information. The second key after "meta" is "results", and its value is a list of dictionaries where each dictionary contains a 2-lettered country code represented by "code" key, country name represented by "name" key, number of measurements for the country ("count"), number of cities in the country ("cities), and number of locations ("locations").</p>
+                    <p>Below are a few examples of how you can extract various information from the returned response. If you want to convert a list of dictionaries into a data frame, you will simply need to use <code>DataFrame</code> function from <code>pandas</code> library. It will set column names to key values.</p>
+                    <script src="https://gist.github.com/dk27/64ee4b20208770e74e6a527130efa2fa.js"></script>
+                    <h3 class="blue">XML</h3>
+                    <p>XML (<b>Extensible Markup Language</b>) isn't as common as JSON, but when you work with SOAP APIs (and even some REST APIs), their response would be returned as XML. If you are familiar with HTML, you might find XML more readable. While searching for an example of a publicly available API with XML response, I couldn't find one, so I took the following XML example from the Internet. </p>
+                    <div class="csv-pull">
+                        <img src="../styles/example-xml.PNG" alt="screenshot of XML file">
+                    </div>
+                    <p>There is an <code>xml</code> package in python that you could use, but I think there is a simpler way to work with xml output by utilizing <code>xmltodict</code> library. The name of the library probably gave it away. You can use its <code>parse</code> function to convert an xml response to <b>ordered dictionary</b> which you would parse exactly like a regular dictionary. </p>
+                    <p>This is what an ordered dictionary of the above xml looks like. I formatted the output slightly so that the structure of the file is more intuitive. It has a main object called <b>products</b> and another object <b>product</b> nested in the main object which in turn contains a list of individual product names, quantities and categories.</p>
+                    <div class="csv-pull restyle">
+                        <img src="../styles/xml-json.PNG" alt="screenshot of XML file">
+                    </div>
+                    <script src="https://gist.github.com/dk27/e0cde88575d98e75279ab9066f39318f.js"></script>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright 2020 Don't You Love Data</p>
+    </footer>
+</body>
+
+</html>

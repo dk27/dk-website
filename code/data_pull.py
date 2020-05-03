@@ -40,10 +40,47 @@ cursor_mysql.execute(query)
 df = pd.DataFrame(cursor_mysql.fetchall())
 # Oracle
 
+# API
 
+# import libraries
+import requests, json, xmlToDict
+import pandas as pd
 
-url = "https://api.spacexdata.com/v3/launches"
+url = "https://api.openaq.org/v1/countries"
+# use get function from requests library to make a GET request
+# No Authentication or parameters are required for this API
 r = requests.get(url)
-spacexdata = json.loads(r.text)
-print(len(spacexdata))
-print(spacexdata)
+print(r) # returns Response[200] which indicates a successful response
+# to view the actual response, we can use .text method which will return the response as a string
+print(type(r.text)) # returns class 'str'
+# loads function in json package allows us to convert a string to a dictionary
+country_data = json.loads(r.text)
+# view the response
+print(country_data)
+# pring first dictionary in the results array
+print(country_data['results'][0])
+# print value of "name" key in the results of the above query
+print(country_data['results'][0]['name'])
+# convert results list of dictionaries into a pandas data frame
+df = pd.DataFrame(country_data['results'])
+
+import xmltodict
+xml = """<?xml version="1.0" encoding="UTF-8"?><products><product><name>Dom quixote de La Mancha</name><quantity>12</quantity><category>Book</category></product><product><name>Hamlet</name><quantity>3</quantity><category>Book</category></product><product><name>War and Peace</name><quantity>7</quantity><category>Book</category></product><product><name>Moby Dick</name><quantity>14</quantity><category>Book</category></product></products>"""
+xml_json = xmltodict.parse(xml) 
+# first element in the list
+xml_json['products']['product'][0]
+# OrderedDict([('name', 'Dom quixote de La Mancha'), ('quantity', '12'), ('category', 'Book')])
+
+# extract name in 1st element
+xml_json['products']['product'][0]['name']
+# 'Dom quixote de La Mancha'
+
+
+
+
+
+
+
+
+
+
