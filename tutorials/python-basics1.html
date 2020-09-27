@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Don't You Love Data?</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../main.js"></script> 
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="../index.html"><img src="../styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html" class="about">about</a></li>
+                <li><a href="../archive.html">archive</a></li>
+                <li><a href="../contact.html" class="contact">contact</a></li>
+                <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button>
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section>
+                <div class="data-pulling-section">
+                    <h2 class="page-title">Installing Python. Tutorials For Mike Series</h2>
+                    <h3>June 14th, 2020</h3>
+                    <p>I'm dedicating a separate post to Python installation. This will be a very long post that would cover different ways of installing Python, <b>virtual environment concept</b>, <b>Python packages</b>, and <b>Python editors</b>. I tried to be as detailed as possible.</p> 
+                    <p>
+                        When you download Python, make sure to download most recent version of Python 3. There is also Python 2 which I wouldn't recommend because there are some differences in syntax and a lot of Python libraries that constantly get updated will stop supporting Python 2 at some point in the future. You can install Python directly or you can install Anaconda distribution of Python. Both are free and open-source. 
+                    </p> 
+                    <h4>Anaconda</h4>
+                    <p>
+                        Anaconda is highly praised by the data science community since it comes with a couple of cool ways to write Python code by using Jupyter Notebook which I frequently use for data science purposes or if you've used R before and used to R studio, then you can try Spyder. It also comes pre-installed with tons of packages.</p> 
+                    <p>   One disadvantage is it takes up too much disk space. I tried installing Anaconda when I just started learning Python but perhaps I didn't spend much time trying to get comfortable with it and ran into a few issues (one caused by my antivirus another happened on my work computer probably related to a web proxy issue) and gave up. </p> 
+                    <p>I'll cover my set up that I'm most comfortable with below. I might revisit Anaconda installation at some point in the future since it's so highly praised by my team. Here are a few links you could use to install Anaconda on your machine:
+                        <ul>
+                            <li class="li"><i class="far fa-smile"></i><a href="https://docs.anaconda.com/anaconda/install/windows/" class="a" target="_blank"> Official Anaconda Documentation</a></li>
+                            <li class="li"><i class="far fa-smile"></i><a href="https://problemsolvingwithpython.com/01-Orientation/01.03-Installing-Anaconda-on-Windows/" class="a" target="_blank"> Anaconda Installation Post</a></li>
+                            <li class="li"><i class="far fa-smile"></i><a href="https://www.edureka.co/blog/python-anaconda-tutorial/" class="a" target="_blank"> Anaconda Tutorial</a></li>
+                        </ul>
+                    </p>
+                    <h4>My Setup</h4>
+                    <h4 class="blue">Python Editors</h4>
+                    <p>
+                        I like using VS Code as my code editor. I mainly use it for Python, HTML, CSS, and JavaScript, but it supports a variety of languages. You can download it from  <a href="https://code.visualstudio.com/download" class="link" target="_blank">code.visualstudio.com</a>.</p>
+                    <p>     When I start working on a new Python project, I create a new directory on my computer, in the example below it's called "Code". That's where I store all files relevant to that project. </p> 
+                    <p>In order to open that directory in VS Code, you would go to <b>File => Open Folder => Select the folder</b>  you would like to Open which imports that directory into VS Code. You can see the folder contents on the left. If you want to add scripts to that folder, you would click on a "file with a +" icon. </p> 
+                    <p>When you name a file, you need to specify its extension depending on the language you are working in. That way, you'll tell VS Code the correct language. For instance, if you work with a Python file, you would name it <b>"my_first_script.py"</b>. When it comes to naming a file, you need to follow certain conventions:
+                        <ul>
+                            <li class="li"> <span class="blue">&check;</span> File name can only contain <b>letters or numbers</b></li>
+                            <li class="li"><span class="blue">&check;</span> File name can only start with a <b>character</b>  or an underscore <b>(_)</b> </li>
+                            <li class="li"><span class="blue">&check;</span> You can use <b>snake case</b>  (snake_case_file_name) or <b>camel case</b> (camelCaseFileName) when you name your files. This is mainly used for readability, you wouldn't want to inherit a file named like <code>thisisafilename1idontknowwhatitdoes</code>  which brings me to my next point </li>
+                            <li class="li"><span class="blue">&check;</span> Be <b>descriptive</b> with your file names</li>
+                        </ul> 
+                        </p>
+                    <p>
+                         
+                        The terminal allows you to run the entire script, or you can run one line at a time to see what the output is. This is the setup I use for developing purposes. 
+                        <div class="csv-pull">
+                            <img src="../styles/vs-code.jpg" alt="screenshot of VS Code">
+                        </div>
+                    </p>                           
+                    <p> In order to write python scripts in VS Code, you will need to download Python from <a href="https://www.python.org/downloads/" target="_blank" class="link">https://www.python.org/downloads/.</a> You'll just need to follow the installation procedure which is very simple. The only caveat is on the first screen you will see a checkbox saying <b>"Add Python to PATH"</b> . It's unselected by default, so make sure to select it. It will make it easier running python scripts from the command line . The only time it's not recommended to check that box if you have multiple versions of Python installed.</p>
+                <h4 class="blue">Install Libraries</h4>  
+                <p>Many tasks in Python can be accomplished by utilizing its libraries. For instance, if you'd like to plot a chart, you would use <code>matplotlib</code> or <code>seaborn</code> library. They do not come pre-installed with Python (unless you are using Anaconda).</p> 
+                <p>There is a special way on how you can install them using <code class="code">pip install</code> command. If you try importing a library before installing it, you will get a <b>No module named "module_name"</b> message which means you need to install it.</p>
+                <p>Before I jump into how to install a library in Python, I'll cover a <b>Virtual Environment</b> concept. It's a good practice to use a virtual environment for when you work on Python projects and need to install specific packages.</p> 
+                <p>The reason why it's useful is because some applications may require a specific version of a library. Here is a step-by-step instruction on how to create a virtual environment using your terminal in VS Code. It's important to note that I'm using Windows 10 which has different terminals and may have slightly different commands.</p>
+                
+                    <ul class="border">
+                        <li> <span class="blue">&check;</span> If you don't have a terminal window in your VS Code, click on <b>Terminal=>New Terminal</b>.  The default terminal selection in Windows 10 is <b>Power Shell</b>, you could switch it to <b>Command Line</b> by typing cmd. Sometimes in very specific cases it matters which terminal you use, but in most cases you can leave it as default</li>
+                        <li><span class="blue">&check;</span> Make sure you have python correctly installed. Type <code class="code">python --version</code> in your terminal. It should return something like <b>Python 3._._</b></li>
+                        <li><span class="blue">&check;</span> To install a virtual environment, use the following command <code class="code">python -m pip install --user virtualenv</code>. If you already have a virtual environment package, you will see <b>Requirement already satisfied</b> message. Make sure there were no errors returned. </li>
+                        <li><span class="blue">&check;</span> I typically create virtual environments somewhere on my C drive separate from my projects (you can use <code>cd</code> command to navigate to the right folder). There are typically three directories generated when you create a virtual environment -- <b>Include</b>, <b>Lib</b>, and <b>Scripts</b> and you wouldn't want to clutter your working project directory</li>
+                        <li><span class="blue">&check;</span> <code class="code">cd</code> command crash course. You can think of this command analogues to you pointing a mouse to a folder and clicking to open it. Great if you have a mouse, but in some cases, you may not have access to it, and to get around it, you can use a terminal and various commands. To open a particular directory by path, you would do <code class="code">cd C:\Exact_Path_Here</code>. To go up a level up from the directory where you are currently working, you would use <code class="code">cd ..</code>. If you want to go two directories up, you would do <code class="code">cd ../..</code>, and so on. To go to the root directory (which may be C:\users\user_name, C: or something else), you would do <code class="code">cd \</code>.</li>
+                        <li><span class="blue">&check;</span> Running <code class="code">python -m venv new_environment</code> should create a new virtual environment for you. You can name your environment anything you want; it doesn't have to be <b>new_environment</b>. Make sure there are no errors returned</li>
+                        <li><span class="blue">&check;</span> You will see on your C drive (if that's where you ran the command), a new folder called <b>new_environment</b> is created. So you can think about a virtual environment as a folder that contains python libraries that you install</li>
+                        <li><span class="blue">&check;</span> The last step is to activate your virtual environment which you would do by running <code class="code">new_environment/Scripts/activate</code></li>
+                    </ul> 
+                <p>
+                    This is what a successful activation of a virtual environment should look like.
+                    <div class="csv-pull">
+                        <img src="../styles/virtual-env.PNG" alt="screenshot of virtual env">
+                    </div> 
+                </p>
+                <p>Now that you are in a virtual environment you can start installing packages that you need. For most packages you can use <code class="code">pip install</code> command. You may see a lot of messages generated by <code class="code">pip install</code> depending on the package you are trying to install. Some packages aren't as straightforward to install if you are installing them on Windows and may require extra research on how to install them. If there are no errors listed after you run <code class="code">pip install</code> and if  <code class="code">import library_name</code> doesn't return <b>No module named "library_name"</b> message, then you successfully installed your first library! </p>
+                <h4 class="blue">Jupyter Notebook</h4>   
+                <p>While I like using VS Code, for most projects related to analytics, Jupyter Notebook works much better. If you followed successfully all the steps above, you can now install Jupyter Notebook with <code class="code">pip install jupyter notebook</code> command. Now you can simply run <code class="code">jupyter notebook</code> in your terminal which would open up a page in your default browser that would look like this:
+                    <div class="csv-pull">
+                        <img src="../styles/jupyter-notebook.PNG" alt="screenshot of jupyter notebook">
+                    </div> 
+                To create a new notebook, make sure to click "New" and select Python 3.
+                </p>   
+                <p class="last-p">
+                    <a href="./python-basics2.html" class="a">2. Python Data Objects</a>
+                </p>                 
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright 2020 Don't You Love Data</p>
+    </footer>
+</body>
+
+</html>
