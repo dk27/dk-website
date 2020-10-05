@@ -14,18 +14,16 @@ ul {
     padding: 0;
 }
 
-
 body {
     /* height: 100vh; */
     font-size: 1.6rem;
     font-family: 'Lora', serif;
     background-color: #f1f8f9;
-
 }
 
 .wrapper {
     max-width: 1900px;
-    width: 90%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -41,20 +39,12 @@ header {
     font-family: 'Indie Flower', cursive;
     background-color: #fff;
     border-bottom: 1px solid #d3d8d9;
-
-
-
 }
 
 .logo {
     max-width: 100px;
     max-height: 100px;
 }
-
-/* .header-flex {
-    display: flex;
-    flex-direction: row;
-} */
 
 .link {
     /* font-style: italic; */
@@ -86,7 +76,6 @@ li {
 .list{
     font-weight: bold;
 }
-
 
 a {
     text-decoration: none;
@@ -145,13 +134,11 @@ h3 {
 
 p {
     margin-top: 20px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 1.5;
     margin-bottom: 5px;
     /* padding: 5px; */
 }
-
-
 
 .js-main, .js-main1 {
     display: flex;
@@ -159,7 +146,6 @@ p {
     justify-content: space-around;
     margin-bottom: 5px;
 }
-
 
 .container-post {
     display: flex;

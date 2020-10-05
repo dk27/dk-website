@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../main.js"></script> 
+    <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                 <li><a href="../about.html" class="about">about</a></li>
                 <li><a href="../archive.html">archive</a></li>
                 <li><a href="../contact.html" class="contact">contact</a></li>
-                <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button>
+                <!-- <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button> -->
             </ul>
         </nav>
         <div class="wrapper header-flex">
@@ -34,17 +35,17 @@
             <section>
                 <div class="data-pulling-section">
                     <h2 class="page-title">Python Data Types. Tutorials For Mike Series</h2>
-                    <h3>September, 2020</h3>
-                    <p>If you are completely new to programming, this is a very important topic to cover.</p>
-                    <h4 class="blue">Numeric Data Types</h4>
-                    <p>Four of these data types are built-in Python data types. In fact, these are common among probably many if not all programming languages. One of the main purposes of types like integers or floats is to perform mathematial operations. A few useful things to know that you'll notice below</p>
+                    <h3>October, 2020</h3>
+                    <p>If you are completely new to programming, this is a very important topic to cover. Before we proceed to various data types, here are a few useful things to know:</p>
                     <ul class="border">
-                        <li><span class="blue">&check;</span>You can use <code class="code">print()</code> function to print things. If you are playing in the console/terminal, this function may not necessarily be helpful, but as you write your code in a code editor, sometimes, it may be helpful to explicitelly print out various statements (can be really helpful when you are trying to debug something)/ </li>
-                        <li><span class="blue">&check;</span> To make your code readable and reusable, it's advisable to add comments to your code. In Python, adding <code class="code">#</code> in front of a statement, will comment out that statement and it will be ignored by Python. This can also be helpful when you try to debug your code, and need to eliminate certain parts to see if the rest works. Check out short keys in your editor/operaing system to comment/uncomment things out. </li>
-                        <li><span class="blue">&check;</span> You can assign a value to a variable in python by using <code class="code">=</code>. This allows you to just use a variable name rather than typing a value again. It's a good practice to use descriptive names when you create variables. Be careful not to unintentionally reuse a variable name in your code. </li>
-                        <li><span class="blue">&check;</span> You can use <code class="code">=</code> to assign values to variables, but if you want to check if two values are equal to each other you would need to use <code class="code">==</code>. I can't tell you how many times I forgot about it and my code returned an <b>invalid syntax</b> error. I'll remind you about it in the next post.</li>
-                    </ul> 
-                    <p>Now we can start with numeric data types in python.</p>
+                        <li><span class="blue">&check;</span>You can use <code class="code">print()</code> function to print things. If you are playing in the console/terminal, this function may not necessarily be helpful, but as you write your code in a code editor, sometimes, it may be helpful to explicitly print out various statements (can be really helpful when you are trying to debug something)</li>
+                        <li><span class="blue">&check;</span> To make your code readable and reusable, it's advisable to add comments to your code. In Python, adding <code class="code">#</code> in front of a statement, will comment out that statement and it will be ignored by Python. This can also be helpful when you try to debug your code, and need to eliminate certain parts to see if the rest works. Check out short keys in your editor/operating system to comment/uncomment things out. </li>
+                        <li><span class="blue">&check;</span> You can assign a value to a variable in python by using <code class="code">=</code>. This allows you to just use a variable name later in your code rather than typing a value over and over again. It's a good practice to use descriptive names when you create variables. Be careful not to unintentionally reuse a variable name in your code. A reminder, variable names cannot contain special characters aside from <b>_</b> and can't start with a number. </li>
+                        <li><span class="blue">&check;</span> You can use <code class="code">=</code> to assign values to variables, but if you want to check if two values are equal to each other, you would need to use <code class="code">==</code>. I can't tell you how many times I forgot about it and my code returned an <b>invalid syntax</b> error. I'll remind you about it in the next posts.</li>
+                    </ul></p>
+                    <h4 class="blue">Numeric Data Types</h4>
+                    <p>Two most common numeric data types are integers and floats. There are also complex numbers, but I've never used one in Python. One of the main purposes of types like integers or floats is to perform mathematical operations.  
+                    <p>Here are a few basic examples that you can try to recreate in your editor.</p>
                     <div class="code-box">
                         <code class="block"><span class="function">print</span>(4)</code>
                         <code class="block"> <span class="val">2</span> + <span class="val">2</span> <span class="comment">returns 4</span></code>
@@ -64,21 +65,21 @@
                         <code class="block"><span class="function">print</span>(<span class="function">type</span>(string_example)) <span class="comment">this is str</span></code>
                     </div>
                     <h4 class="blue">Boolean</h4>
-                    <p>Boolean can only take two values: True or False. These data types are used when you want to evaluate two expressions. I'll talk more about Boolean values in the Conditional Logic post.</p>
+                    <p>Boolean can only take two values: <code class="code">True</code> or <code class="code">False</code>. These data types are used when you want to evaluate two expressions. I'll talk more about Boolean values in the Conditional Logic post.</p>
                     <div class="code-box">
                         <code class="block"><span class="function">print</span>(10>9)<span class="comment">this returns True</span></code>
                         <code class="block"><span class="function">print</span>(10==9)<span class="comment">this returns False</span></code>
                     </div>
                     <p>Data types mentioned below are also built-in, but comparing to the ones mentioned above, they are a bit more complex. You can't successfully code in Python without knowing these data types.</p>
                     <h4 class="blue">Lists</h4>
-                    <p>You are familair with other programming languages, you may know lists as arrays. These are very useful data objects. List is a collection of data elemens. To tell Python that something is a list, you would need to use <code class="code">[]</code> and separate each element with a comma. A few useful things to know about them.</p>
+                    <p>If you are familiar with other programming languages, you may know lists as arrays. These are very useful data objects. List is a collection of data elements. To tell Python that something is a list, you would need to use <code class="code">[]</code> and separate each element with a comma. A few useful things to know about them.</p>
                     <ul class="border">
                         <li><span class="blue">&check;</span>You can have a list with only one element. You may also sometimes want to initialize an empty list. </li>
-                        <li><span class="blue">&check;</span> You can add, remove, and modify elements within the list. </li>
+                        <li><span class="blue">&check;</span> You can add, remove, and modify elements within a list. </li>
                         <li><span class="blue">&check;</span> Lists are ordered collections which means that you can select a certain element from a list by specifying its index. </li>
-                        <li><span class="blue">&check;</span> The order in the list starts with 0, so if you were to select the first element in the list, you would specify index of 0.</li>
+                        <li><span class="blue">&check;</span> The order in a list starts with 0, so if you were to select the first element in the list, you would specify index of 0.</li>
                         <li><span class="blue">&check;</span> You can provide a negative index which would start the order from the end of the list. Since you can't provide -0, -1 would return the first element from the end.</li>
-                        <li><span class="blue">&check;</span> List can contain any data type in the list, and various elements in the list can be of different data types. An example below contains numeric types, string, Boolean and even a list as its element. Yes, a list inside of a list! Some real world examples can have really complicated nested lists.</li>
+                        <li><span class="blue">&check;</span> Lists can contain any data type in the list, and various elements in the list can be of different data types. An example below contains numeric types, string, Boolean and even a list as its element. Yes, a list inside of a list! Some real world examples can have really complicated nested lists.</li>
                     </ul> 
                     <p>Here is some code to try. You can create your own lists (including nested lists), and see if you can correctly select desired elements.</p>
                     <div class="code-box">
@@ -94,23 +95,45 @@
                         <code class="block"> crazy_list = <span class="val">[1, True, 0.5, "Hi", [1, 3,5]]</span></code>
                         <code class="block"><span class="function">print</span>(crazy_list[-1][1])<span class="comment">this prints 3.</span></code>
                     </div>
-                    <p>Lists are very useful. You'll commonly need to itterate through the list which will be covered in the post on Loops. Sometimes you may need to know the number of elements in the list. Other times you may need to calculate the sum (or average) of all elements in the list. You can create lists out of strings. I'll talk more about various operations you can do with lists in the Functions post. </p>
+                    <p>Lists are very useful. You'll commonly need to iterate through them which will be covered in my post on Loops. Sometimes you may need to know the number of elements in a list. Other times you may need to calculate the sum (or average) of all elements in a list. I'll talk more about various operations you can do with lists in the Functions post. </p>
                     <h4 class="blue">Dictionary</h4>
-                    <p></p>
+                    <p>Similar to lists, dictionaries are a collection of data elements, but unlike lists they are unordered. In Python, dictionaries are represented by curly brackets <code class="code">{}</code>. You can remove, add, modify elements within a dictionary. Since it's an unordered data type, indexing becomes irrelevant (i.e. you can't use <code class="code">[i]</code> on a dictionary). Instead, to extract a data element, you will need to specify a key. This is what a dictionary looks like <code class="code">{"key1": 1, "key2": "b"}</code> where "key1" and "key2" are <b>keys</b> and 1 and "b" are <b>values</b> that correspond to "key1" and "key2" accordingly.</p>
+                    <p>Values can contain any data type. They can be strings, numbers, Boolean, lists and even dictionaries. To extract an element from a dictionary, you'll need to use a squared bracket (similar to a list), but instead of an index, you specify a key in quotes.  </p>
+                    <div class="code-box">
+                        <code class="block"> simple_dict = <span class="val">{"country": "USA", "state": "NY", "city": "New York"}</span></code>
+                        <code class="block"><span class="function">print</span>(simple_dict)<span class="comment">prints {"country": "USA", "state": "NY", "city": "New York"}</span></code>
+                        <code class="block"><span class="function">print</span>(simple_dict['country'])<span class="comment">prints USA</span></code>
+                        <code class="block"><span class="comment">You can use single or double quotes to specify the key but make sure opening and closing quotes are the same</span></code>
+                        <code class="block"><span class="function">print</span>(simple_dict['city'])<span class="comment">prints New York</span></code>
+                        <code class="block"> nested_dict = <span class="val">{"city": "New York", "boroughs":[{"name": "Manhattan", "population": 1628706},{"name": "Bronx", "population": 1418207},{"name": "Brooklyn", "population": 2559903},{"name": "Queens", "population": 2253858},{"name": "Staten Island", "population": 476143}]}</span></code>
+                        <code class="block"><span class="comment">The value for "boroughs" key is a list of dictionaries</span></code>
+                        <code class="block"><span class="function">print</span>(nested_dict['boroughs'])<span class="comment">returns a list of dictionaries</span></code>
+                        <code class="block"><span class="function">print</span>(nested_dict['boroughs'][2]['name'])<span class="comment">returns Brooklyn</span></code>
+                    </div>
+                    <p>Let's figure out why my code above returned "Brooklyn". I know that "Brooklyn" is contained within "boroughs" value which is a list of dictionaries. I can do <code class="code">nested_dict['boroughs']</code> which returns the entire list of dictionaries. A list is an ordered collection, so I need to know the order of the element within that list that I'm interested in which would be the 3rd. Since the index count in Python starts from 0, we need to add <code class="code">[2]</code>; combining these two pieces we get <code class="code">nested_dict['boroughs'][2]</code>. This prints <code class="code">{"name": "Brooklyn", "population": 2559903}</code>. Now all is left is to extract "Brooklyn" which you can do by adding <code class="code">['name']</code>. Examples like this are very common and it's easy to get confused when you have a list. If you forget to specify the index [2] (which I've done numerous times), Python will return a <b>TypeError</b> that reads <code class="code">TypeError: list indices must be integers or slices, not str</code> which I think  is pretty straightforward. You are trying to pass a string as a list index which you can't do. List indices have to be integers! And if you think about it, you have "name" listed 5 times. How would Python know which name you are referring to? I recommend spending more time on understanding this. </p>
+                    <p> In the next post I'll talk about common operations you can do with lists and dictionaries.</p>
                     <h4 class="blue">Tuple</h4>
-
-                    <h4 class="blue">Set</h4>
-
+                    <p>Tuple is another way to represent a collection. Tuples are ordered collections, so you can safely use indexing to extract an element. Tuples are immutable which means elements within a tuple cannot be changed unlike lists and dictionaries.</p> 
+                    <div class="code-box">
+                        <code class="block"> my_tuple = <span class="val">(0, -1, 10, 5)</span></code>
+                        <code class="block"><span class="function">print</span>(my_tuple[1])<span class="comment">prints -1</span></code>
+                        <code class="block"> my_tuple1 = <span class="val">((0,1), (2,4))</span></code>
+                        <code class="block"><span class="function">type</span>(my_tuple1)<span class="comment">prints class 'tuple'</span></code> 
+                        <code class="block"><span class="function">print</span>(my_tuple1[1][1])<span class="comment">prints 4</span></code>                       
+                    </div> 
                     <h4 class="blue">Data Frame</h4>
-                    <p>Data Frames are data structures not native to Python that need to be imported from a <b>Pandas</b> library. I'll have an entire post on data frames, but for now all you need to know is that a data frame is a two-dimentional structure (or a table) that has columns and rows.This data structure is very useful for analytics purposes.</p>
+                    <p>Data Frames are data structures not native to Python that need to be imported from a <b>Pandas</b> library. I'll have an entire post on data frames, but for now all you need to know is that a data frame is a two-dimensional structure (or a table) that has columns and rows. This data structure is very useful for analytics purposes.</p>
 
                     <p>Here are a few links that you can use to read more about various data types.</p>
                     <ul>
                         <li class="li"><i class="far fa-smile"></i><a href="https://docs.python.org/3/library/datatypes.html" class="a" target="_blank"> Official Python Documentation</a></li>
                         <li class="li"><i class="far fa-smile"></i><a href="https://www.w3schools.com/python/python_datatypes.asp" class="a" target="_blank"> More on Data Types</a></li>
+                        <li class="li"><i class="far fa-smile"></i><a href="https://realpython.com/python-dicts/" class="a" target="_blank"> More on Dictionaries</a></li>
+                        <li class="li"><i class="far fa-smile"></i><a href="https://www.w3schools.com/python/python_tuples.asp" class="a" target="_blank"> More on Tuples</a></li>
                     </ul>
                     <p class="last-p">
                         <a href="./python-basics1.html" class="a">1. Installing Python</a>
+                        <br><a href="./python-basics2a.html" class="a">2a. What can you do with Lists & Dictionaries?</a>
                     </p>  
                     
                 </div>
