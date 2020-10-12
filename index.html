@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179618911-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-179618911-1');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Don't You Love Data?</title>
+    <title>Don't You Love Data? Data Science Blog, Tutorials, Data Exploration</title>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,15 +28,12 @@
             <nav class="main-nav">
                 <div><a href="index.html"><img src="styles/logo2.jpg" alt="logo" class="logo"></a></div>
                 <ul class="firstUL">
-                    <button class="exit-responsive">
-						<i class="fas fa-times"></i>
-						<p class="sr-only">Click me to close the navigation.</p>
-					</button>
+
                     <li><a href="index.html">home</a></li>
                     <li><a href="about.html" class="about">about</a></li>
                     <li><a href="archive.html">archive</a></li>
                     <li><a href="contact.html" class="contact">contact</a></li>
-                    <!-- <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button> -->
+                
                 </ul>
             </nav>
             <div class="wrapper header-flex">
@@ -39,6 +46,16 @@
         <div class="wrapper">
             <section class="js-main">
                 <div class="container-post">
+                    <h3>Into to SQL</h3>
+                    <div class="img-div">
+                        <img src="styles/joins.PNG" alt="sample of SQL code">
+                        
+                    </div>
+                    <p class="main-display">A gentle introduction to SQL and most useful SQL commands to retrieve and manipulate structured data.</p>
+                    <a href="./tutorials/sql-basics.html" class="js-click ">click to see more</a>
+                </div>
+
+                <div class="container-post last-reactive">
                     <h3>Tutorials For Mike</h3>
                     <div class="img-div">
                         <img src="styles/montessori-waldorf-toys-and-toddlers.jpg" alt="toys and toddlers image">
@@ -48,7 +65,10 @@
                     <a href="./misc/python-tutorials-series.html" class="js-click ">click to see more</a>
                 </div>
 
-                <div class="container-post last-reactive">
+            </section>
+            
+            <section class=" js-main1">
+                <div class="container-post">
                     <h3>SpaceX API Exploration</h3>
                     <div class="img-div">
                         <img src="styles/spacex-PIOgkhaF3WA-unsplash.jpg" alt="space X image">
@@ -58,26 +78,13 @@
                     <a href="./data-explore/spacex-data.html" class="js-click ">click to see more</a>
                 </div>
 
-            </section>
-            
-            <section class=" js-main1">
-                <div class="container-post">
+                <div class="container-post last-reactive">
                     <h3>Introduction to Importing Data in Python (Part 2)</h3>
                     <div class="img-div">
                         <img src="styles/countries-json.PNG" alt="JSON">
                     </div>
                     <p>Gentle introduction to working with non-tabulaur data objects and how to make API calls in Python. </p>
                     <a href="./tutorials/p2-datapull2.html" class="js-click">click to see more</a>
-                </div>
-
-                <div class="container-post last-reactive">
-                    <h3>Introduction to Importing Data in Python (Part 1)</h3>
-                    <div class="img-div">
-                        <img src="styles/michael-payne-jkBvXKwr4MY-unsplash.jpg" alt="panda image" title="Photo by Michael Payne">
-                        
-                    </div>
-                    <p class="main-display">Gentle introduction to importing various data formats into Python. This tutorial will cover CSV files and relational databases.</p>
-                    <a href="./tutorials/data-pull.html" class="js-click ">click to see more</a>
                 </div>
 
             </section>
@@ -94,7 +101,13 @@
                 </div>
 
                 <div class="container-post last-reactive">
-
+                    <h3>Introduction to Importing Data in Python (Part 1)</h3>
+                    <div class="img-div">
+                        <img src="styles/michael-payne-jkBvXKwr4MY-unsplash.jpg" alt="panda image" title="Photo by Michael Payne">
+                        
+                    </div>
+                    <p class="main-display">Gentle introduction to importing various data formats into Python. This tutorial will cover CSV files and relational databases.</p>
+                    <a href="./tutorials/data-pull.html" class="js-click ">click to see more</a>
                 </div>
 
             </section>

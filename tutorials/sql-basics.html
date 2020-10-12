@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179618911-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-179618911-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Don't You Love Data? SQL Tutorial</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../main.js"></script>
+    <script src="../sql_playground.js"></script>
+    <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="../index.html"><img src="../styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html" class="about">about</a></li>
+                <li><a href="../archive.html">archive</a></li>
+                <li><a href="../contact.html" class="contact">contact</a></li>
+                <!-- <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button> -->
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section>
+                <div class="data-pulling-section">
+                    <h2 class="page-title">Intro to SQL</h2>
+                    <h3>October 12th, 2020</h3>
+                    <p>I strongly believe that if you want a Data Analyst or Data Scientist job, you must be comfortable
+                        with extracting and manipulating data from <b>SQL</b>. This post should not be used as a
+                        comprehensive guide to SQL, but it will provide an overview of most common SQL commands.</p>
+                    <p>What is SQL? SQL stands for Structured Query Language (you can pronounce it as <b>'sequel'</b> or
+                        <b>'ess-cue-elle'</b>). It allows you to retrieve data stored in <b>relational databases</b>,
+                        such as Microsoft SQL Server, MySQL or Oracle, and manipulate it in a variety of ways. </p>
+                    <p> If a concept of a database is new to you, you can think of it as a collection of tables. For
+                        instance, you can draw a comparison to an Excel workbook with multiple worksheets where each
+                        worksheet is somehow related to another. Worksheets can be compared to <b>SQL tables</b> and the entire
+                        workbook can be compared to a <b>database</b>. The key is to have some sort of relationship between the
+                        tables that allows you to bring all that data together. Please keep in mind that this is just an
+                        analogy and Excel workbook is <b>not</b> a database.</p>
+                    <p>Each table in SQL consists of <b>rows</b> and <b>columns</b> where columns represent different
+                        data attributes and rows represent observations or data records. Tables can contain different
+                        types of data but the main types are integer, decimal, character or string, date, and time.</p>
+                    <div class="csv-pull">
+                        <img src="../styles/provinces.PNG" alt="screenshot of aggregate table">
+                    </div>
+                    <p>I won't go into details on how to setup or create a database but will focus on several useful SQL
+                        commands instead.</p>
+                    <h4 class="blue">SELECT</h4>
+                    <p>This is the most important command as it allows you to retrieve data from a table. <code
+                            class="code">SELECT</code> on itself won't do anything, so you need to specify what data you
+                        want to retrieve and from where.</p>
+                    <p>
+                        You can retrieve data from a <b>table</b>, so you need to specify a table name in the <code
+                            class="code">SELECT</code> statement. <code class="code">SELECT</code> statement refers to
+                        the columns part of a table and not the rows, so you also need to list columns. Here are a few
+                        things to remember:
+                    <ul class="border">
+                        <li><span class="blue">&check;</span>To select a column, you will simply need to type its name
+                        </li>
+                        <li><span class="blue">&check;</span> You can select all columns by typing their name or you can
+                            use <code class="code">*</code> to select all columns without typing their names</li>
+                        <li><span class="blue">&check;</span> You can select as many or as few columns from a table as
+                            you want </li>
+                        <li><span class="blue">&check;</span> You can even create new columns in the <code
+                                class="code">SELECT</code> statement</li>
+                    </ul>
+                    </p>
+                    <p>Let's assume that we have a table named "Provinces" that contains two columns -- "Province" and
+                        "ProvinceCode". You can use the following statement to select all rows and columns from this
+                        table.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> Province, ProvinceCode <span class="function">FROM</span> Provinces</code>
+                    </div>
+                    <p>The same can be achieved by running the following command.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                    </div>
+                    <p>You can also select only Province from this table.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> Province <span class="function">FROM</span> Provinces</code>
+                    </div>
+                    <p>You can add a column to the output of your select statement. Let's say you want to indicate that
+                        all of this provinces are in Canada by adding a column <b>"Country"</b> with a value of
+                        <b>"Canada"</b>. You'll need to specify first what the value should be followed by a key word
+                        <code class="code">as</code> and the name you want this column to take. Please note that this
+                        statement does <b>not</b> modify "Provinces" table! Also, you can only use single quotes in SQL
+                        when working with strings.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> *, 'Canada' as Country <span class="function">FROM</span> Provinces</code>
+                    </div>
+                    <p>If you want to add a product of two numeric columns to the output of the select statement, this
+                        is what you can do</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> num_col1, num_col2, num_col1*num_col2 as num_col_product <span class="function">FROM</span> table_name</code>
+                    </div>
+                    <p>Any other mathematical operator will work. There are also built-in functions that you can apply
+                        on columns to create new columns. Let's say you have a date column, and you want to add a year
+                        calculated from that column. </p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> date_column, year(date_column) as yr <span class="function">FROM</span> table_name</code>
+                    </div>
+                    <p>If you want to create a column that contains first two characters from one column and last three
+                        characters from another column separated by -, you can use <code class="code">LEFT, RIGHT</code>
+                        functions and <code class="code">+</code> to combine multiple strings together.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> str_col1, str_col2, left(str_col1,2)+'-'+right(str_col2,3) as yr <span class="function">FROM</span> table_name</code>
+                    </div>
+                    <p>You can find an overview of various functions <a
+                            href="https://www.w3schools.com/sql/sql_ref_sqlserver.asp" class="a"
+                            target="_blank">Here</a>. I encourage you to read documentation and familiarize yourself
+                        with what functions you can use. You don't need to remember the exact syntax or arguments that a
+                        function takes. Should you ever need to use one of these functions, you can always Google it.
+                    </p>
+                    <h4 class="blue">WHERE</h4>
+                    <p>
+                        The commands above would select all rows from table "Provinces". There will be cases where you
+                        don't want all of the observations to be returned; that's when you use the <code
+                            class="code">WHERE</code> clause. It is typically specified after you specify a table name
+                        (unless you do a join, more on this to come). This is a typical syntax <code
+                            class="code">WHERE column_name operator value</code>. Here is a list of operations that you
+                        can perform in the <code class="code">WHERE</code> clause.
+                    <ul class="border">
+                        <li><span class="blue">&check;</span>Mathematical comparisons with the following operators <code
+                                class="code">=, <,>, <=, >=, <> </code>. Note that <code class="code"><></code> means
+                            not equal. <code class="code">=, <></code> can be used for strings and numbers</li>
+                        <li><span class="blue">&check;</span> To search for a pattern in a string, you can use <code
+                                class="code">LIKE</code> operator </li>
+                        <li><span class="blue">&check;</span> You can use <code class="code">IN</code> operator to
+                            specify multiple values in a column </li>
+                        <li><span class="blue">&check;</span> You can have multiple filters in the <code
+                                class="code">WHERE</code> clause separated by <code class="code">AND</code> or <code
+                                class="code">OR</code>. Don't forget to specify column name for every filter you pass in
+                            the <code class="code">WHERE</code> clause </li>
+                    </ul>
+                    Don't worry if the above is a little confusing or feels too much. The examples below should help you
+                    understand the syntax better.
+                    </p>
+                    <p>Let's say we want to select all columns from <b>"Provinces"</b> table where column "ProvinceCode"
+                        is ON.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">WHERE</span> ProvinceCode = 'ON'</code>
+                    </div>
+                    <p>Let's say we want to select all columns from <b>"Provinces"</b> table where column "ProvinceCode"
+                        is <b>not</b> ON.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">WHERE</span> ProvinceCode <> 'ON'</code>
+                    </div>
+                    <p>If we want to filter based on multiple values, we can do the following</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code
+                            class="block"><span class="function">WHERE</span> ProvinceCode = 'ON' or ProvinceCode = 'BC'</code>
+                    </div>
+                    <p>You can see that you can specify multiple filters by using <code class="code">OR</code> in this
+                        case. Keep in mind if you have two or more filters in the <code class="code">WHERE</code>
+                        clause, you need to type variable name and operator again.</p>
+                    <p>This will return an <b><span style="color:red">ERROR</span></b></p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">WHERE</span> ProvinceCode = 'ON' or 'BC'</code>
+                    </div>
+                    <p>The filtering example above is not very efficient. You would typically use multiple filtering
+                        criteria for different columns. If you want to select multiple values from a column, you can use
+                        <code class="code">IN</code> operator.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">WHERE</span> ProvinceCode in ('ON', 'BC')</code>
+                    </div>
+                    <p>If you want all values but ON and BC, you can simply add <code class="code">not</code> before
+                        <code class="code">IN</code></p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">WHERE</span> ProvinceCode not in ('ON', 'BC')</code>
+                    </div>
+                    <p>When you have strings in a column and want to select values based on a certain pattern you can
+                        use <code class="code">LIKE</code> operator. There are two wildcards that can be used with it.
+                        <code class="code">%</code> which represents zero, one or multiple characters or <code
+                            class="code">_</code> which represents single character.</p>
+                    <p>Let's select all provinces that have an <b>s</b> in their name. Since the length of each Province
+                        name can vary and it can have an <b>s</b> anywhere in the name, you can do the following</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">WHERE</span> Province like '%s%' </code>
+                    </div>
+                    <p>If you want to select a Province that has an <code class="code">i</code> as second to last
+                        letter, you can use <code class="code">_</code></p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">WHERE</span> Province like '%i_' </code>
+                    </div>
+                    <h4 class="blue">CASE WHEN</h4>
+                    <p>You can use conditional logic to create variables by following this syntax. </p>
+                    <p><code class="code">CASE WHEN condition THEN result1 ELSE result2 END AS new_variable</code></p>
+                    <p>You can also have multiple conditions.</p>
+                    <p><code
+                            class="code">CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE result3 END AS new_variable</code>
+                    </p>
+                    <p>Using "Province" table, you can create a new column <b>"Region"</b> that takes <b>"Atlantic"</b>
+                        value if "ProvinceCode" is NL, NB, PE or NS. For all other provinces, let's set the value to
+                        <b>"Non-Atlantic"</b>.</p>
+                    <div class="code-box">
+                        <code class="block"><span class="function">SELECT</span> *, </code>
+                        <code
+                            class="block"><span class="function">CASE WHEN</span> ProvinceCode in ('NL', 'NB', 'PE', 'NS') then 'Atlantic' else 'Non-Atlantic' END AS Region</code>
+                        <code class="block"><span class="function">FROM</span> Provinces</code>
+                    </div>
+                    <h4 class="blue">GROUP BY</h4>
+                    <p><code class="code">GROUP BY</code> can be used to summarize values in a table (aggregate,
+                        average, count, etc.). The following table can serve as an example for when you would want to
+                        use <code class="code">GROUP BY</code>. The table contains 8 records, 4 observations for each
+                        year where each row represents a quarter for the corresponding year. </p>
+                    <div class="csv-pull">
+                        <img src="../styles/sales.PNG" alt="screenshot of aggregate table">
+                    </div>
+                    <p>What if you were asked to calculate average sales or total sales for 2019 and 2020? That's where
+                        you can use <code class="code">GROUP BY</code>. In order to use it correctly, in the <code
+                            class="code">SELECT</code> statement, you will first need to specify the columns for which
+                        you want to display aggregated data (year in our case), a column that needs to be transformed
+                        and indicate which transformation needs to be applied (summed, averaged, counted, take the max
+                        or min). </p>
+                    <p>The rest of your query would follow as standard, i.e. you indicate <code class="code">FROM</code>
+                        which table you need to retrieve the data. If there are any filters you need to apply, you
+                        specify them in the <code class="code">WHERE</code> clause. Finally, you add <code
+                            class="code">GROUP BY</code> which should contain one or more variables separated by commas
+                        for which you are grouping the data.</p>
+                    <p><code class="code">SELECT var1, var2, sum(var3) as sum_var3 FROM table GROUP BY var1, var2</code>
+                    </p>
+                    <p>Notice that you only specify the variable that don't need to be grouped in the <code
+                            class="code">GROUP BY</code> statement.</p>
+                    <p>Let's see how we can calculate total sales for each year.</p>
+                    <div class="code-box">
+                        <code class="block"><span class="function">SELECT</span> Year, sum(Sales) as Sales </code>
+                        <code class="block"><span class="function">FROM</span> qrt_sales</code>
+                        <code class="block"><span class="function">GROUP BY</span> Year</code>
+                    </div>
+                    <p>This is how you can get average annual sales.</p>
+                    <div class="code-box">
+                        <code class="block"><span class="function">SELECT</span> Year, avg(Sales) as avg_Sales </code>
+                        <code class="block"><span class="function">FROM</span> qrt_sales</code>
+                        <code class="block"><span class="function">GROUP BY</span> Year</code>
+                    </div>
+                    <p>You can get total and average sales all in one statement.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> Year, avg(Sales) as avg_Sales, sum(Sales) as sum_Sales </code>
+                        <code class="block"><span class="function">FROM</span> qrt_sales</code>
+                        <code class="block"><span class="function">GROUP BY</span> Year</code>
+                    </div>
+                    <p>You can also get how many observations there are in this table for each year (it's obvious in
+                        this example, but there will be cases where you might need to get observation count). </p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> Year, count(Sales) as count_Sales </code>
+                        <code class="block"><span class="function">FROM</span> qrt_sales</code>
+                        <code class="block"><span class="function">GROUP BY</span> Year</code>
+                    </div>
+                    <h4 class="blue">ORDER BY</h4>
+                    <p>If you want to sort the order of the <code class="code">SELECT</code> statement, you can use
+                        <code class="code">ORDER BY</code>. This doesn't change the order of records in a table, and
+                        only affects the output of the statement. You can sort in descending order by adding <code
+                            class='code'>desc</code> key word. The default order is ascending. You can also sort by
+                        multiple variables; you just need to separate them by commas.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
+                        <code class="block"><span class="function">ORDER BY</span> ProvinceCode</code>
+                    </div>
+                    <h4 class="blue">JOIN</h4>
+                    <p>If you remember in the beginning of the post, I mentioned that a database is a collection of
+                        tables where each table has some sort of identifier or key that allows you to join the tables
+                        together. That's really what a <code class="code">JOIN</code> clause does.</p>
+                    <div class="csv-pull">
+                        <img src="../styles/joins.PNG" alt="joins diagram">
+                    </div>
+                    <ul class="border">
+                        <li><span class="blue">&check;</span> LEFT JOIN returns all records from the left table and
+                            records from the right table that are found in the left table.</li>
+                        <li><span class="blue">&check;</span> RIGHT JOIN returns all records from the right table and
+                            records from the left table that are found in the right table. </li>
+                        <li><span class="blue">&check;</span> INNER JOIN only returns records that are present in both
+                            tables. </li>
+                        <li><span class="blue">&check;</span> FULL JOIN returns all records from both tables. </li>
+                    </ul>
+                    <div class="csv-pull">
+                        <img src="../styles/join-tables.PNG" alt="joins table">
+                    </div>
+                    <p>This is what the output of the four joins would look like using the tables in the example above.
+                        Notice that the unique key in Table 1 and Table 2 is <b>City</b>. Also, a <code
+                            class="code">JOIN</code> returns a <code class="code">NULL</code> for when a match isn't
+                        found; this is how SQL flags missing values.</p>
+                    <div class="csv-pull">
+                        <img src="../styles/join-output.PNG" alt="joins output">
+                    </div>
+                    <p>Here is the syntax for four different joins shown above.</p>
+                    <code
+                        class="code block">SELECT t1.City, t1.Airport, t2.Ocean FROM Table1 t1 LEFT JOIN Table2 t2 ON t1.City=t2.City</code>
+                    <code
+                        class="code block">SELECT t2.City, t2.Ocean, t1.Airport FROM Table1 t1 RIGHT JOIN Table2 t2 ON t1.City=t2.City</code>
+                    <code
+                        class="code block">SELECT t1.City, t1.Airport, t2.Ocean FROM Table1 t1 INNER JOIN Table2 t2 ON t1.City=t2.City</code>
+                    <code
+                        class="code block">SELECT t1.City, t1.Airport, t2.Ocean FROM Table1 t1 FULL JOIN Table2 t2 ON t1.City=t2.City</code>
+                    <p>A few things to remember about the syntax.
+                    <ul class="border">
+                        <li><span class="blue">&check;</span> You need to specify join type after the <code
+                                class="code">FROM</code> command.</li>
+                        <li><span class="blue">&check;</span> If certain columns exist in both tables, you need to
+                            specify from which table you want to select a column by adding table name before column name
+                            <code class="code">SELECT table_name1.variable_name1, table_name2.variable_name2 </code>
+                        </li>
+                        <li><span class="blue">&check;</span> Instead of typing full table name before column name, you
+                            can assign an alias in the <code class="code">FROM</code> command and <code
+                                class="code">JOIN</code> clause. In the example above, you can see that in <code
+                                class="code">FROM Table1 t1 LEFT JOIN Table2 t2</code> t1 and t2 are aliases which
+                            allows me to use them before column names rather than full table names. </li>
+                        <li><span class="blue">&check;</span> You need to specify a key or keys on which you want to
+                            join tables, like this <code class="code">ON t1.key=t2.key</code> </li>
+                        <li><span class="blue">&check;</span> You can join table on multiple keys <code
+                                class="code">ON t1.key1=t2.key1 and t1.key2=t2.key2</code>. Please note that the names
+                            of the key columns you want to join on, don't need to match. </li>
+                        <li><span class="blue">&check;</span> You can join more than two tables and can even perform
+                            different types of joins. </li>
+                    </ul>
+                    </p>
+                    <div class="code-box">
+                        <code class="block"><span class="function">SELECT</span> t1.Key, t2.Name1, t3.Name2 </code>
+                        <code class="block"><span class="function">FROM</span> table1 t1</code>
+                        <code class="block"><span class="function">LEFT JOIN</span> table2 t2</code>
+                        <code class="block">ON t1.key = t2.key</code>
+                        <code class="block"><span class="function">RIGHT JOIN</span> table3 t3</code>
+                        <code class="block">ON t1.key = t3.key</code>
+                    </div>
+
+                    <h4 class="blue">UNION</h4>
+                    <p><code class="code">UNION</code> can also combine two or more tables but unlike a <code
+                            class="code">JOIN</code> clause, it appends the tables on top of each other. In order for
+                        <code class="code">UNION</code> to work correctly, you need to specify the same number of
+                        columns appearing in the same order from each table.</p>
+                    <div class="code-box">
+                        <code class="block"><span class="function">SELECT</span> col1, co2 </code>
+                        <code class="block"><span class="function">FROM</span> table1 </code>
+                        <code class="block"><span class="function">UNION</span></code>
+                        <code class="block"><span class="function">SELECT</span> col1, co2 </code>
+                        <code class="block"><span class="function">FROM</span> table2 </code>
+                    </div>
+                    <p>When can <code class="code">UNION</code> be helpful? If you have similar data stored in different
+                        tables. Perhaps, data from one year is stored in one table whereas data from another year is
+                        stored in a different table, and you want to combine it in one table, that's when you would use
+                        the <code>UNION</code> operator.</p>
+                    <p>I'm planning on adding a SQL playground to this post where you can write basic commands covered
+                        in this tutorial. I'm hoping it can be completed within a few weeks. In the meantime, here are a
+                        few useful links you can checkout.</p>
+                    <ul>
+                        <li class="li"><i class="far fa-smile"></i><a href="https://www.w3schools.com/sql/" class="a"
+                                target="_blank"> W3Schools SQL Tutorial</a></li>
+                        <li class="li"><i class="far fa-smile"></i><a
+                                href="https://www.tutorialspoint.com/sql/sql-operators.htm" class="a" target="_blank">
+                                Comprehensive SQL tutorial that also covers database concepts and advanced SQL
+                                commands</a></li>
+                        <li class="li"><i class="far fa-smile"></i><a
+                                href="https://www.khanacademy.org/computing/computer-programming/sql" class="a"
+                                target="_blank"> Khan academy Into to SQL</a></li>
+
+                    </ul>
+                    <!-- <p>I built a SQL playground where you can write basic commands covered in this tutorial.</p> -->
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p>Copyright 2020 Don't You Love Data</p>
+        </div>
+        
+    </footer>
+</body>
+
+</html>
