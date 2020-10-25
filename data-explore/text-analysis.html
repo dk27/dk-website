@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179618911-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-179618911-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Don't You Love Data? SQL Tutorial</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../main.js"></script>
+    <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="../index.html"><img src="../styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html" class="about">about</a></li>
+                <li><a href="../archive.html">archive</a></li>
+                <li><a href="../contact.html" class="contact">contact</a></li>
+                <!-- <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button> -->
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section>
+                <div class="data-pulling-section">
+                    <h2 class="page-title">Visualizing Text from Last Presidential Debate</h2>
+                    <h3>October 25th, 2020</h3>
+                    <p>I like working with text data. If used correctly, it can improve accuracy of predictive models,
+                        and it can be really fun to visualize the contents of articles, tweets, reviews, and so on.
+                        Since the last presidential debate took place a few days ago, I thought I'd take a crack at
+                        analyzing its transcript. </p>
+                    <p>My posts typically use or reference Python, but today I decided to do the analysis in R. Here are
+                        the things that I did.</p>
+
+                    <ul>
+                        <li><span class="blue">&check;</span> Imported transcript data from an html page in R</li>
+                        <li><span class="blue">&check;</span> Did some basic data cleaning and separated the data by
+                            candidate</li>
+                        <li><span class="blue">&check;</span> Created word frequency and word cloud charts</li>
+                        <li><span class="blue">&check;</span> Looked into word associations</li>
+                    </ul>
+                    <p>You can find my full code <a href="" class="link">Here</a>.</p>
+                    <p>I used <a
+                            href="https://www.rev.com/blog/transcripts/donald-trump-joe-biden-final-presidential-debate-transcript-2020"
+                            class="a" target="_blank">www.rev.com transcripts</a> as my data source. It's nicely
+                        formatted and not very difficult to work with, you just need to make sure you separate
+                        candidates' speeches if you want to look at them individually.</p>
+                    <p>I also did some typical data cleaning which consists of removing numbers, punctuation, white
+                        spaces, converting every word to lower case, and removing common stopwords that don't have much
+                        meaning. This all can be easily achieved with the <code class="code">tm</code> library.</p>
+                    <p>A good starting point of text analysis is to look at words frequencies. Sometimes it can shed
+                        light on what the text is about, but I can't say
+                        that these charts below are very informative. It is interesting that top 3 words for both
+                        candidates
+                        are "going", "people" and "said" but not very surprising. I guess the only surprising thing is
+                        that I'd thought coronavirus or COVID-19 would make it in the top-15.</p>
+
+                    <div class="csv-pull1">
+                        <img src="../styles/plot-freq.png" alt="word frequency Trump & Biden">
+                    </div>
+
+                    <p>Another way to look at word frequency is by using <b>word clouds</b>. I think that it's a more
+                        fun way to visualize word frequencies rather than a bar chart. </p>
+                    <p>Joe Biden's word cloud shows that he wasn't using the same words very frequently, and the cloud
+                        itself isn't very big. I only included words that appear at least 5 times in his speech. The
+                        color and size represent different frequency groups, and we can see 5 clear
+                        groups and most of the words are in red. </p>
+                    <div class="csv-pull1">
+                        <img src="../styles/biden-wordcloud.png" alt="word cloud Biden">
+                    </div>
+                    <p>Donald Trump's is probably more interesting to interpret. While both Trump and Biden mention
+                        "China" a lot (20 and 22 times accordingly), Trump also used "Russia" 20 times in his speech.
+                        It's
+                        also interesting that we don't see Biden addressing Trump by his first or last name, whereas
+                        Trump said "Joe" 31 times. Again, it's surprising not to see "coronavirus" or "COVID-19".
+                        Overall, both word clouds seem to be consistent with what I remember from the debate. </p>
+                    <div class="csv-pull1">
+                        <img src="../styles/trump-wordcloud.png" alt="word cloud Biden">
+                    </div>
+
+                    <p>While you can gain some insights from word frequency and word clouds, I really like <code
+                            class="code">udpipe</code> library that allows you to look at key words and word
+                        associations.</p>
+                    <p>We can look at frequencies of various parts of speech although not sure how informative it is.
+                        What's probably more interesting is to view most commonly used parts of speech. I first looked
+                        at
+                        verbs, but the result looked underwhelming. </p>
+                    <p>I then looked at nouns which seemed to be more interesting. Both candidates used "people" the
+                        most in their speeches. Biden's second most common noun is "fact" whereas Trump's is "money". I
+                        think
+                        most frequently used adjectives are the most informative.</p>
+                    <div class="grid-4-4">
+                        <div class="grid-top">
+                            <div class="csv-pull1">
+                                <img src="../styles/biden-noun.png" alt="Biden nouns">
+                            </div>
+                            <div class="csv-pull1">
+                                <img src="../styles/trump-noun.png" alt="Trump nouns">
+                            </div>
+                        </div>
+                        <div class="grid-bottom">
+                            <div class="csv-pull1">
+                                <img src="../styles/biden-adj.png" alt="Biden adjectives">
+                            </div>
+                            <div class="csv-pull1">
+                                <img src="../styles/trump-adj.png" alt="Trump adjectives">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p><code class="code">Udpipe</code> also allows you to search for keywords. There are multiple
+                        methods that you can use, and I chose <a href="https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents" class="a" target="_blank">RAKE</a>. Rapid Automatic Keyword Extraction algorithm
+                        utilizes most relevant words and takes into account their
+                        frequency and co-occurrences. </p>
+                    <p>I'm a little bit surprised about "big man" in Trump's speech and don't quite recall to whom it referred.</p>
+                    <div class="grid-bottom">
+                        <div class="csv-pull1">
+                            <img src="../styles/biden-keywords.png" alt="Biden keywords">
+                        </div>
+                        <div class="csv-pull1">
+                            <img src="../styles/trump-keyword.png" alt="Trump keywords">
+                        </div>
+                    </div>
+                    <p>The next two charts are my favorites. While word frequencies can be useful, sometimes you may want
+                        to know which words follow one another. For instance, "sure" showed up as an important word in
+                        Joe Biden's speech. Was it used as "not sure" or "make sure"? That's where the following graphs
+                        can be quite helpful. </p>
+                    <p>
+                        As you can see from Biden's word association chart, "sure" is associated with "make sure". It's
+                        interesting to see that "make" is also associated with "clear" and "money". "People" is another
+                        common word which is associated with "American people", "give people" and "enough". Overall, we can see a lot of associations related to health whether it's wearing a mask or having affordable healthcare.
+                    </p>
+                    <div class="csv-pull1">
+                        <img src="../styles/biden-word-network.png" alt="Biden word network">
+                    </div>
+                    <p>In Donald Trump's speech, "have" seems to be associated with quite a few words -- "have good
+                        relationship", "have school open", etc. There is some reference to money ("make money", "lot money", "million dollar"), energy sector (carbon emissions and oil industry) and "big man" appearing again. </p>
+                    <div class="csv-pull1">
+                        <img src="../styles/trump-word-network.png" alt="Trump word network">
+                    </div>
+                    <p>These are just a few ways you can visualize text data. I watched the debate, so I may be biased
+                        toward whether it was helpful to understand what candidates talked about. Overall, I think word
+                        association and key words charts were representative of the contents of the debate. What did you think?</p>
+                    <p>As always, here are a few links that you can check out.</p>
+                    <ul>
+                        <li class="li"><i class="far fa-smile"></i><a
+                                href="http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know"
+                                class="a" target="_blank"> Wordcloud</a></li>
+                        <li class="li"><i class="far fa-smile"></i><a
+                                href="https://cran.r-project.org/web/packages/udpipe/vignettes/udpipe-annotation.html"
+                                class="a" target="_blank">
+                                Terrific udpipe tutorial</a></li>
+                        <li class="li"><i class="far fa-smile"></i><a href="https://www.tidytextmining.com/ngrams.html"
+                                class="a" target="_blank"> Really good text analytics tutorial in R</a></li>
+
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p>Copyright 2020 Don't You Love Data</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

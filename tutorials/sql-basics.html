@@ -54,21 +54,26 @@
                         such as Microsoft SQL Server, MySQL or Oracle, and manipulate it in a variety of ways. </p>
                     <p> If a concept of a database is new to you, you can think of it as a collection of tables. For
                         instance, you can draw a comparison to an Excel workbook with multiple worksheets where each
-                        worksheet is somehow related to another. Worksheets can be compared to <b>SQL tables</b> and the entire
-                        workbook can be compared to a <b>database</b>. The key is to have some sort of relationship between the
+                        worksheet is somehow related to another. Worksheets in this comparison are <b>SQL tables</b> and
+                        the entire
+                        workbook would be a <b>database</b>. The key is to have some sort of relationship between the
                         tables that allows you to bring all that data together. Please keep in mind that this is just an
                         analogy and Excel workbook is <b>not</b> a database.</p>
                     <p>Each table in SQL consists of <b>rows</b> and <b>columns</b> where columns represent different
                         data attributes and rows represent observations or data records. Tables can contain different
                         types of data but the main types are integer, decimal, character or string, date, and time.</p>
-                    <div class="csv-pull">
-                        <img src="../styles/provinces.PNG" alt="screenshot of aggregate table">
-                    </div>
-                    <p>I won't go into details on how to setup or create a database but will focus on several useful SQL
-                        commands instead.</p>
+
+                    <p>In this tutorial, I won't go into details on how to setup or create a database but will focus on
+                        several useful SQL
+                        commands instead. You will learn how to select data from tables, create new variables using
+                        conditional logic, filter records, aggregate tables, sort records in a table, and join multiple
+                        tables together. These are a must know basic commands for anyone interested in learning SQL.</p>
+
                     <h4 class="blue">SELECT</h4>
-                    <p>This is the most important command as it allows you to retrieve data from a table. <code
-                            class="code">SELECT</code> on itself won't do anything, so you need to specify what data you
+
+                    <p><code class="code">SELECT</code> is the most important command as it allows you to retrieve data
+                        from a table. <code class="code">SELECT</code> on itself won't do anything, so you need to
+                        specify what data you
                         want to retrieve and from where.</p>
                     <p>
                         You can retrieve data from a <b>table</b>, so you need to specify a table name in the <code
@@ -87,8 +92,13 @@
                     </ul>
                     </p>
                     <p>Let's assume that we have a table named "Provinces" that contains two columns -- "Province" and
-                        "ProvinceCode". You can use the following statement to select all rows and columns from this
-                        table.</p>
+                        "ProvinceCode".
+
+                    <div class="csv-pull">
+                        <img src="../styles/provinces.PNG" alt="screenshot of aggregate table">
+                    </div>
+                    You can use the following statement to select all rows and columns from this
+                    table.</p>
                     <div class="code-box">
                         <code
                             class="block"><span class="function">SELECT</span> Province, ProvinceCode <span class="function">FROM</span> Provinces</code>
@@ -131,7 +141,7 @@
                         functions and <code class="code">+</code> to combine multiple strings together.</p>
                     <div class="code-box">
                         <code
-                            class="block"><span class="function">SELECT</span> str_col1, str_col2, left(str_col1,2)+'-'+right(str_col2,3) as yr <span class="function">FROM</span> table_name</code>
+                            class="block"><span class="function">SELECT</span> str_col1, str_col2, left(str_col1,2)+'-'+right(str_col2,3) as new_col <span class="function">FROM</span> table_name</code>
                     </div>
                     <p>You can find an overview of various functions <a
                             href="https://www.w3schools.com/sql/sql_ref_sqlserver.asp" class="a"
@@ -189,6 +199,7 @@
                         clause, you need to type variable name and operator again.</p>
                     <p>This will return an <b><span style="color:red">ERROR</span></b></p>
                     <div class="code-box">
+                        <code class="block"><span class="comment">INVALID SYNTAX!!</span></code>
                         <code
                             class="block"><span class="function">SELECT</span> * <span class="function">FROM</span> Provinces</code>
                         <code class="block"><span class="function">WHERE</span> ProvinceCode = 'ON' or 'BC'</code>
@@ -228,10 +239,12 @@
                     </div>
                     <h4 class="blue">CASE WHEN</h4>
                     <p>You can use conditional logic to create variables by following this syntax. </p>
-                    <p><code class="code">CASE WHEN condition THEN result1 ELSE result2 END AS new_variable</code></p>
+                    <p><code
+                            class="code">CASE WHEN <span style="color:black">condition </span> THEN <span style="color:black">result1 </span>  ELSE  <span style="color:black">result2 </span>  END AS new_variable</code>
+                    </p>
                     <p>You can also have multiple conditions.</p>
                     <p><code
-                            class="code">CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 ELSE result3 END AS new_variable</code>
+                            class="code">CASE WHEN <span style="color:black">condition1 </span> THEN <span style="color:black">result1 </span> WHEN <span style="color:black">condition2 </span> THEN <span style="color:black">result2 </span> ELSE <span style="color:black">result3 </span> END AS new_variable</code>
                     </p>
                     <p>Using "Province" table, you can create a new column <b>"Region"</b> that takes <b>"Atlantic"</b>
                         value if "ProvinceCode" is NL, NB, PE or NS. For all other provinces, let's set the value to
@@ -256,12 +269,15 @@
                         you want to display aggregated data (year in our case), a column that needs to be transformed
                         and indicate which transformation needs to be applied (summed, averaged, counted, take the max
                         or min). </p>
+                    <p>Please note that in order for this query to work correctly, you will need to exclude "Quarter"
+                        column. If you include it, since there is one record per Quart & Year, you will simply get the
+                        same output as the original table.</p>
                     <p>The rest of your query would follow as standard, i.e. you indicate <code class="code">FROM</code>
                         which table you need to retrieve the data. If there are any filters you need to apply, you
                         specify them in the <code class="code">WHERE</code> clause. Finally, you add <code
                             class="code">GROUP BY</code> which should contain one or more variables separated by commas
                         for which you are grouping the data.</p>
-                    <p><code class="code">SELECT var1, var2, sum(var3) as sum_var3 FROM table GROUP BY var1, var2</code>
+                    <p><code class="code">SELECT  <span style="color:black">var1, var2, sum(var3) as sum_var3 </span> FROM table GROUP BY <span style="color:black">var1, var2 </span></code>
                     </p>
                     <p>Notice that you only specify the variable that don't need to be grouped in the <code
                             class="code">GROUP BY</code> statement.</p>
@@ -284,7 +300,7 @@
                         <code class="block"><span class="function">FROM</span> qrt_sales</code>
                         <code class="block"><span class="function">GROUP BY</span> Year</code>
                     </div>
-                    <p>You can also get how many observations there are in this table for each year (it's obvious in
+                    <p>You can also count how many observations there are in this table for each year (it's obvious in
                         this example, but there will be cases where you might need to get observation count). </p>
                     <div class="code-box">
                         <code
@@ -296,7 +312,7 @@
                     <p>If you want to sort the order of the <code class="code">SELECT</code> statement, you can use
                         <code class="code">ORDER BY</code>. This doesn't change the order of records in a table, and
                         only affects the output of the statement. You can sort in descending order by adding <code
-                            class='code'>desc</code> key word. The default order is ascending. You can also sort by
+                            class='code'>desc</code> key word after the name of the variable you want to sort. The default order is ascending. You can also sort by
                         multiple variables; you just need to separate them by commas.</p>
                     <div class="code-box">
                         <code
@@ -331,13 +347,13 @@
                     </div>
                     <p>Here is the syntax for four different joins shown above.</p>
                     <code
-                        class="code block">SELECT t1.City, t1.Airport, t2.Ocean FROM Table1 t1 LEFT JOIN Table2 t2 ON t1.City=t2.City</code>
+                        class="code block">SELECT  <span style="color:black;">t1.City, t1.Airport, t2.Ocean</span> FROM <span style="color:black;">Table1</span>  t1 LEFT JOIN <span style="color:black;">Table2</span> t2 ON <span style="color: black;">t1.City=t2.City</span> </code>
                     <code
-                        class="code block">SELECT t2.City, t2.Ocean, t1.Airport FROM Table1 t1 RIGHT JOIN Table2 t2 ON t1.City=t2.City</code>
+                        class="code block">SELECT <span style="color:black;">t2.City, t2.Ocean, t1.Airport</span>  FROM <span style="color:black;">Table1</span> t1 RIGHT JOIN <span style="color:black;">Table2</span>  t2 ON <span style="color: black;">t1.City=t2.City</span> </code>
                     <code
-                        class="code block">SELECT t1.City, t1.Airport, t2.Ocean FROM Table1 t1 INNER JOIN Table2 t2 ON t1.City=t2.City</code>
+                        class="code block">SELECT <span style="color:black;">t1.City, t1.Airport, t2.Ocean</span> FROM <span style="color:black;">Table1</span> t1 INNER JOIN <span style="color:black;">Table2</span>  t2 ON <span style="color: black;">t1.City=t2.City</span> </code>
                     <code
-                        class="code block">SELECT t1.City, t1.Airport, t2.Ocean FROM Table1 t1 FULL JOIN Table2 t2 ON t1.City=t2.City</code>
+                        class="code block">SELECT <span style="color:black;">t1.City, t1.Airport, t2.Ocean</span> FROM <span style="color:black;">Table1</span> t1 FULL JOIN <span style="color:black;">Table2</span>  t2 ON <span style="color: black;">t1.City=t2.City</span> </code>
                     <p>A few things to remember about the syntax.
                     <ul class="border">
                         <li><span class="blue">&check;</span> You need to specify join type after the <code
@@ -375,7 +391,7 @@
                         <code class="code">UNION</code> to work correctly, you need to specify the same number of
                         columns appearing in the same order from each table.</p>
                     <div class="code-box">
-                        <code class="block"><span class="function">SELECT</span> col1, co2 </code>
+                        <code class="block"><span class="function">SELECT</span> col1, col2 </code>
                         <code class="block"><span class="function">FROM</span> table1 </code>
                         <code class="block"><span class="function">UNION</span></code>
                         <code class="block"><span class="function">SELECT</span> col1, co2 </code>
@@ -385,6 +401,18 @@
                         tables. Perhaps, data from one year is stored in one table whereas data from another year is
                         stored in a different table, and you want to combine it in one table, that's when you would use
                         the <code>UNION</code> operator.</p>
+                    <p>Putting all the code mentioned above together, this is how your syntax would look like.</p>
+                    <div class="code-box">
+                        <code
+                            class="block"><span class="function">SELECT</span> t1.col1, t1.col2, sum(t2.col3) as col3  </code>
+                        <code class="block"><span class="function">FROM</span> table1 t1</code>
+                        <code class="block"><span class="function">LEFT JOIN</span> table2 t2 on t1.id=t2.id</code>
+                        <code
+                            class="block"><span class="function">WHERE</span> t1.col1 in ('A', 'B') and t1.col2 < 50</code>
+                        <code class="block"><span class="function">GROUP BY</span> t1.col1, t1.col2 </code>
+                        <code class="block"><span class="function">ORDER BY</span> t1.col1, t1.col2 </code>
+                    </div>
+                    <p>Notice how each command starts on a separate line? If you write everything in one line, your code will still work, but it will be not very readable, so I'd say it's a good practice to write your code in a similar way.</p>
                     <p>I'm planning on adding a SQL playground to this post where you can write basic commands covered
                         in this tutorial. I'm hoping it can be completed within a few weeks. In the meantime, here are a
                         few useful links you can checkout.</p>
@@ -410,7 +438,7 @@
         <div class="wrapper">
             <p>Copyright 2020 Don't You Love Data</p>
         </div>
-        
+
     </footer>
 </body>
 

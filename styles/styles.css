@@ -165,7 +165,7 @@ p {
      height: 200px;
  }
 
- .csv-pull {
+ .csv-pull,  .csv-pull1{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,6 +175,26 @@ p {
     height: 300px;
     padding: 20px;
  }
+
+ .csv-pull1 img{
+    /* height: 425px; */
+    padding: 20px;
+ }
+
+ .grid-4-4 {
+     display: flex;
+     flex-direction: column;
+
+ }
+
+ .grid-top, .grid-bottom {
+     display: flex;
+     flex-direction: row;
+
+     
+ }
+
+
 .js-about, .js-contact {
 
     padding: 10px;
