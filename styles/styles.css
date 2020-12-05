@@ -255,9 +255,13 @@ p {
     margin-top: 0px;
 }
 
-.fa-grin-alt {
+.fa-grin-alt{
     color: #0f4ff2;
 }
+.fa-grin-hearts {
+    color: #6a0ff2;
+}
+
 
 .fa-smile {
     color: #0f97f2;
@@ -382,6 +386,25 @@ button {
     width: 30%;
     max-height: 300px;
 }
+
+/* for comments */
+
+
+#hyvor-talk-view {
+    width: 700px;
+    max-width: 100%;
+    margin: auto;
+
+}
+
+.chart-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0;
+    color: #10a4d4;
+}
+
 
 @media (max-width: 768px) {
     .wrapper {

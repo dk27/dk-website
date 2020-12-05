@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179618911-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-179618911-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Don't You Love Data? AWS Reinvent2020 Week1</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../main.js"></script> 
+    <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="../index.html"><img src="../styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html" class="about">about</a></li>
+                <li><a href="../archive.html">archive</a></li>
+                <li><a href="../contact.html" class="contact">contact</a></li>
+                <!-- <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button> -->
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section>
+                <div class="data-pulling-section">
+                    <h2 class="page-title">AWS reInvent 2020 Week1 Overview</h2>
+                    <h3>December 6th, 2020</h3>
+                    <div class="csv-pull1">
+                        <img src="../styles/reInvent2020-w1.png"
+                            alt="reInvent KeyNote screenshot">
+                    </div>
+                    <p>It's that time of the year where Amazon hosts its annual <a href="https://reinvent.awsevents.com" class="link" target="_blank"> reInvent</a> which is a free 3-week virtual conference. </p>
+                    <p> If you haven't watched any of the talks yet, I highly recommend registering which I assume you can still do. </p>
+                    <p>A decent number of talks happens in the morning or later in the evening, so if you have to work during the day, you can still catch some of the sessions.</p>
+                    <p>While my main interest is in ML, I also watched several talks on databases like <b>DynamoDB</b> and <b>serverless</b> architecture. Here are my key takeaways.</p>
+                    <h4 class="blue">SageMaker</h4>
+                    <p>First introduced at reInvent 2017, <b>SageMaker</b> has become a popular <b>Data Science</b> tool. It allows you to not only train models in Python or R, but most importantly deploy them with just one line of code.</p>
+                    <p>The sessions that I attended are (smiley faces represent how much I liked them):</p>
+                    <ul>
+                        <li class="li"><i class="far fa-smile"></i> How to use fully managed Jupyter notebooks in AWS SageMaker</li>
+                        <li class="li"><i class="far fa-grin-hearts"></i> Implementing MLOps practices with Amazon SageMaker</li>
+                        <li class="li"><i class="far fa-grin-alt"></i> Compliant and Secure ML</li>
+                        <li class="li"><i class="far fa-grin-alt"></i> Productionalizing R workloads using SageMaker featuring Siemens</li>
+                    </ul>
+                    <p>What I really liked about these talks is that they emphasized the importance of model deployment which is commonly overlooked by data scientists. It also made me think about secure setup of an ML environment. And sure, this is something that's frequently handled by network engineers or an IT department, but it doesn't mean that we shouldn't know what type of permissions we should have when working on ML projects and how to ensure that what we do is secure.</p>
+                    <p>While Python may feel as a more suitable language when working with <b>SageMaker</b>, R is also fully supported. Your options are similar to the ones in Python. You can use RStudio with <code class="code">reticulate</code> library, <b>SageMaker</b> notebook or AWS CLI.</p>
+                    <p>Going back to the MLOps aspect, a lot of <b>SageMaker</b> talks also include <b>AWS Step Functions</b>  architecture which seems to be a great combination for most ML projects.</p>
+                    <h4 class="blue">AWS Step Functions</h4>
+                    <p><b>AWS Step Functions</b> is a serverless function orchestrator that can be used to sequence <b>AWS Lambdas</b> and various AWS services. They are created using Amazon State Language which is JSON based.</p>
+                    <p>You can perform a task with <b>AWS Step Functions</b>, execute branches in parallel (in addition to sequential calls), add conditional logic, add human intervention and add error catching.</p>
+                    <p>If you have an application that consists of calling multiple Lambdas or AWS services, you may want to seriously consider <b>AWS Step Functions</b>.</p>
+                    <p>AWS has tons of resources on Step Functions which you can find <a href="https://docs.aws.amazon.com/step-functions/latest/dg/getting-started.html" class="link" target="_blank">Here</a>.</p>
+                    <h4 class="blue">DynamoDB</h4>
+                    <p>
+                        This was another talk that I really liked. I'm somewhat familiar with <b>DynamoDB</b> but after hearing this talk by Alex DeBrie made me realize that I've been under utilizing its capabilities. 
+                    </p>
+                    <p>Coming from a traditional SQL background, there is a steep learning curve and some of the concepts may even be mind blowing, such as lack of JOINs. I know, crazy stuff happening there! </p>
+                    <p>However, you can't overlook advantages of <b>DynamoDB</b> such as speed especially for Software Development. Even in Data Science projects, if you work with JSON data a lot, <b>DynamoDB</b>  is probably a far better alternative to relational databases.</p>
+                    <h4 class="blue">Amazon Comprehend</h4>
+                    <p>McDonald's had an interesting talk on how they are utilizing AWS architecture to gain insights from customer surveys. </p>
+                    <p>One of the services that McDonald's uses is <b>Amazon Comprehend</b> which allows them to perform various text analytics tasks, such as sentiment analysis, named entity recognition, keywords search on over 20M of open comments from their customer surveys. </p>
+                    <p>McDonald's not fully relying on Comprehend, however, because it doesn't always pick the right sentiment. Their example was "Fries were cold" was flagged as neutral sentiment, but AWS architecture allows them to integrate NLP models built in-house to enhance accuracy.</p>
+
+                    <p class="last-p">While I can't say that these talks gave an in-depth overview of certain products or provided me with details on how to exactly do something, they gave me enough examples of services that I should look into and their applications, which I think is the intent of these talks anyway.</p>
+                    <p>I'm looking forward to next weeks sessions and will post my recap at the end of each week.</p>
+                    <p>Feel free to leave your feedback on any other sessions that you found useful, or if you would like me to provide more recap on some of the sessions I mentioned above.</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="hyvor-talk-view" style="max-width:100%;width: 700px; margin:auto"></div>
+        <script type="text/javascript">
+            var HYVOR_TALK_WEBSITE = 2498; // DO NOT CHANGE THIS
+            var HYVOR_TALK_CONFIG = {
+                url: "http://www.dontyoulovedata.com/misc/awsreinvent2020-w1.html",
+                id: 2
+            };
+        </script>
+        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p>Copyright 2020 Don't You Love Data</p>
+        </div>
+    </footer>
+</body>
+
+</html>

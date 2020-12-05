@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179618911-1"></script>
@@ -13,12 +14,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Don't You Love Data? Fun Correlations</title>
+    <title>Don't You Love Data? Odd Correlations</title>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../main.js"></script> 
+    <script src="../main.js"></script>
+    <script src="../odd_correlations_data.js"></script>
 </head>
+
 <body>
     <header>
         <nav class="main-nav">
@@ -39,18 +42,138 @@
     <main>
         <div class="wrapper">
             <div class="spacex">
-                <h2 class="page-title">Fun Correlations</h2>
-                <h3>October 23rd, 2020</h3>
-                <p>A few years ago I discovered a fun website <a href="https://www.tylervigen.com/spurious-correlations" class="link">Spurious Correlations</a>. When two variables are highly correlated (negatively or postively), and if that correlation doesn't seem to make any sense, that's when we call it spurious. This is my take on spurious yet fun correlations.  </p>
-                
+                <h2 class="page-title">Odd Correlations</h2>
+                <h3>November 29th, 2020</h3>
+                <div class="csv-pull1">
+                    <img src="../styles/pexels-pixabay-269318.jpg" alt="Lightbulb image from Pexels">
+                </div>
+                <p>A few years ago I discovered a fun website <a href="https://www.tylervigen.com/spurious-correlations"
+                        class="link">Spurious Correlations</a>. When two variables are highly correlated (negatively or
+                    postively), and if that correlation doesn't seem to make any sense, that's when we call it spurious.
+                </p>
+                <p>I started working on this post a few months ago, and quite frankly collecting data and finding
+                    patterns was frustrating. There are a lot more data sources that I'd like to explore, so I'm
+                    planning on collecting more data over time and expanding this post. For now, I'll share some
+                    exhibits that I found interesting.</p>
+                <p>For the purpose of this post, I compiled a dataset with over 1,600 of columns from a variety of
+                    sources including the World Bank, Federal Reserve Bank of St. Louis, EIA, FBI, Wikipedia, etc.</p>
+                <p>A few interesting spurious relationships I found (in case you don't feel like scrowling down). Dairy consumption in the US seems to correlate with a lot of not so good things including increased CO2 emissions in certain countries. While I can buy this trend (not the magnitude of the correlation coefficient), it's also correlated with different types of crimes in the US with milk, cottage cheese and regular ice cream being the worst offenders. Butter and cheese consumption, on the other hand, is negatively correlated with various types of crime in the US, so keep eating butter with cheese. </p>
+                    <div class="csv-pull1">
+                        <img src="../styles/crime_dairy_corr1.png" alt="Crime Dairy Correlation Matrix">
+                    </div>    
+
+                <p>You can find my Jupyter notebook here.</p>
+                <p class="chart-title"># of Songs by the year in which they were written, first performed, published,
+                    recorded, or released vs CO2 Emissions (metric tons per capita) in Dominica </p>
+                <div class="csv-pull1">
+                    <img src="../styles/SongsCO2DMA.png" alt="Songs vs CO2 in DMA">
+                </div>
+                <p class="chart-title">China/US Foreign Echange Rate vs Renewable Electricity Output (as % of Total
+                    Electricity Output) in Arab World</p>
+                <div class="csv-pull1">
+                    <img src="../styles/ChinaUSExchangeRateRenewalEnergyConsumptionARB.png"
+                        alt="China US Exchange Rate vs Renewable Electricity Output in Arab Wolrd">
+                </div>
+                <p class="chart-title">Mexico/US Foregin Exchange Rate vs Air Transport, Registered Carrier Departures
+                    in Vietnam</p>
+                <div class="csv-pull1">
+                    <img src="../styles/MexicoUSExchangeRateAirDepartureVNM.png"
+                        alt="Mexico US Exchange Rate vs Air Departures in Vietnam">
+                </div>
+                <p class="chart-title">Consumer Price Index (All Items) in Russia vs # of ATMs per 100,000 adults in
+                    Pakistan</p>
+                <div class="csv-pull1">
+                    <img src="../styles/CPIRussiaATM_PAK.png" alt="CPI Russia vs ATM in Pakistan">
+                </div>
+                <p class="chart-title">Government Gross Debt in Russia (% of GDP, Not Seasonally Adjusted) vs Rural
+                    Population in South Korea (% of Total Population) in South Korea</p>
+                <div class="csv-pull1">
+                    <img src="../styles/GovGRSDebtRussiaRuralPopulationKOR.png"
+                        alt="Governemnt Debt in Russia vs Rural Population in South Korea">
+                </div>
+                <p class="chart-title">Banana Price vs # of ATMs per 100,000 adults in Lebanon</p>
+                <div class="csv-pull1">
+                    <img src="../styles/BananaATM_LBN.png" alt="Banana Price vs # of ATMs in Lebanon">
+                </div>
+                <p class="chart-title">US Milk Consumption vs Rural Population (as % of Total Population) in North Korea
+                </p>
+                <div class="csv-pull1">
+                    <img src="../styles/MilkRuralPopulationPRK.png"
+                        alt="Milk Consumption vs Rural Populationg in North Korea">
+                </div>
+                <p class="chart-title">Cottage Cheese Constumption in the US vs US Forgery Crime</p>
+                <div class="csv-pull1">
+                    <img src="../styles/cottage cheeseforgery.png" alt="Cottage Cheese Consumption vs Forgery">
+                </div>
+                <p class="chart-title">US Yogurt Consumption vs CO2 in China</p>
+                <div class="csv-pull1">
+                    <img src="../styles/yogurtCO2CHN.png" alt="US Yogurt Consumption vs CO2 in China">
+                </div>
+                <p class="chart-title"># of Unmannged Space Launches vs # of ATMs per 100,000 adults in Afghanistan</p>
+                <div class="csv-pull1">
+                    <img src="../styles/Launch  UnmannedATM_AFG.png"
+                        alt="# of Unmannged Space Launches vs # of ATMs per 100,000 adults in Afghanistan">
+                </div>
+                <p class="chart-title">US Motor Vehicle Theft vs China/US Foreign Exchange Rate</p>
+                <div class="csv-pull1">
+                    <img src="../styles/motor_vehicle_theftChinaUSExchangeRate.png"
+                        alt="US Motor Vehicle Theft vs China/US Foreign Exchange Rate">
+                </div>
+                <p class="chart-title">US Gambling Crimes vs # of ATMs per 100,000 adults in Denmark</p>
+                <div class="csv-pull1">
+                    <img src="../styles/motor_vehicle_theftChinaUSExchangeRate.png"
+                        alt="US Gambling Crimes vs # of ATMs per 100,000 adults in Denmark">
+                </div>
+
+                <p>Here you can explore other series.</p>
+                <div>
+
+                </div>
+                <p>Here is a full list of data sources I used</p>
+                <ul>
+                    <li class="li"><i class="far fa-smile"></i><a
+                            href="https://en.wikipedia.org/w/index.php?title=Category:Songs_by_year&subcatfrom=1986%0A1986+songs#mw-subcategories"
+                            class="a" target="_blank"> Number of Songs by Year</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a href="https://data.worldbank.org/" class="a"
+                            target="_blank"> The World Bank</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a
+                            href="https://www.thebalance.com/unemployment-rate-by-year-3305506" class="a"
+                            target="_blank"> Annual Unemployment Rate</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a href="https://spacelaunchreport.com/logyear.html"
+                            class="a" target="_blank"> Space Launches</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a
+                            href="https://inflationdata.com/articles/inflation-adjusted-prices/historical-crude-oil-prices-table/"
+                            class="a" target="_blank"> Historical Oil Prices</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a href="https://www.eia.gov/" class="a" target="_blank">
+                            EIA data</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a
+                            href="https://www.ers.usda.gov/data-products/dairy-data/" class="a" target="_blank"> USDA
+                            Dairy Consumption Data</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a href="https://ucr.fbi.gov/crime-in-the-u.s" class="a"
+                            target="_blank"> US Crime Data</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a href="https://fred.stlouisfed.org/" class="a"
+                            target="_blank"> Federal Reserve Bank of St. Louis</a></li>
+                </ul>
             </div>
         </div>
+
+        <div id="hyvor-talk-view" style="max-width:100%;width: 700px; margin:auto"></div>
+        <script type="text/javascript">
+            var HYVOR_TALK_WEBSITE = 2498; // DO NOT CHANGE THIS
+            var HYVOR_TALK_CONFIG = {
+                url: "http://www.dontyoulovedata.com/data-explore/fun-correlations.html",
+                id: 1
+            };
+        </script>
+        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+
     </main>
     <footer>
         <div class="wrapper">
             <p>Copyright 2020 Don't You Love Data</p>
         </div>
-        
+
     </footer>
 </body>
+
 </html>
