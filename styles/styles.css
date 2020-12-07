@@ -334,7 +334,9 @@ button {
 	color: #10a4d4;
 }
 
-.see-more-btn{
+
+
+.see-more-btn, .see-more-btn1{
     background: #10a4d4;
     color: white;
     font-family: 'Indie Flower', cursive;
@@ -342,18 +344,23 @@ button {
     border-radius: 10px;
 }
 
-.btn-div {
+.btn-div, .btn-div1{
     display: flex;
     justify-content: center;
     margin-top: 25px;
 }
 
-.see-more-btn:hover{
+
+
+.see-more-btn:hover, .see-more-btn1:hover{
     background: #79E4F4;
 }
 
+.google-chart {
+    display: none;
+}
 
-
+/* 
 .hamburger,
 .exit-responsive {
 	display: none;
@@ -363,7 +370,7 @@ button {
 	position: relative;
 	top: 30px;
 	left: 30px;
-}
+} */
 
 
 .h3-center {
@@ -405,7 +412,23 @@ button {
     color: #10a4d4;
 }
 
+.drop-down {
+    display: flex;
+    justify-content: center;
+}
 
+#series1, #series2 {
+    padding: 5px;
+}
+
+#curve_chart {
+    width: 100%;
+    min-height: 400px;
+}
+
+
+
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .wrapper {
         width: 90%;
@@ -471,7 +494,19 @@ button {
     .p1-datascience-flex img {
         width: 50%;
         order: 1;
-    }    
+    }   
+    .drop-down {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #series1, #series2 {
+        padding: 5px;
+    } 
+    .selectVal {
+        width: 100%;
+    }
 }
 
 @media (max-width: 380px) {
@@ -502,5 +537,18 @@ button {
     .code-box {
         width: 100%;
     
+    }
+    .drop-down {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #series1, #series2 {
+        padding: 5px;
+        width: 100
+    } 
+    .selectVal {
+        width: 100%;
     }
 }

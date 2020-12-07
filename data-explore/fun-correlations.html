@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="../main.js"></script>
     <script src="../odd_correlations_data.js"></script>
 </head>
@@ -49,7 +50,7 @@
                 </div>
                 <p>A few years ago I discovered a fun website <a href="https://www.tylervigen.com/spurious-correlations"
                         class="link">Spurious Correlations</a>. When two variables are highly correlated (negatively or
-                    postively), and if that correlation doesn't seem to make any sense, that's when we call it spurious.
+                        positively), and if that correlation doesn't seem to make any sense, that's when we call it spurious.
                 </p>
                 <p>I started working on this post a few months ago, and quite frankly collecting data and finding
                     patterns was frustrating. There are a lot more data sources that I'd like to explore, so I'm
@@ -57,10 +58,16 @@
                     exhibits that I found interesting.</p>
                 <p>For the purpose of this post, I compiled a dataset with over 1,600 of columns from a variety of
                     sources including the World Bank, Federal Reserve Bank of St. Louis, EIA, FBI, Wikipedia, etc.</p>
-                <p>A few interesting spurious relationships I found (in case you don't feel like scrowling down). Dairy consumption in the US seems to correlate with a lot of not so good things including increased CO2 emissions in certain countries. While I can buy this trend (not the magnitude of the correlation coefficient), it's also correlated with different types of crimes in the US with milk, cottage cheese and regular ice cream being the worst offenders. Butter and cheese consumption, on the other hand, is negatively correlated with various types of crime in the US, so keep eating butter with cheese. </p>
-                    <div class="csv-pull1">
-                        <img src="../styles/crime_dairy_corr1.png" alt="Crime Dairy Correlation Matrix">
-                    </div>    
+                <p>A few interesting spurious relationships I found (in case you don't feel like scrolling down). Dairy
+                    consumption in the US seems to correlate with a lot of not so good things including increased CO2
+                    emissions in certain countries. While I can buy this trend (not the magnitude of the correlation
+                    coefficient), it's also correlated with different types of crimes in the US with milk, cottage
+                    cheese and regular ice cream being the worst offenders. Butter and cheese consumption, on the other
+                    hand, is negatively correlated with various types of crime in the US, so keep eating butter with
+                    cheese. </p>
+                <div class="csv-pull1">
+                    <img src="../styles/crime_dairy_corr1.png" alt="Crime Dairy Correlation Matrix">
+                </div>
 
                 <p>You can find my Jupyter notebook here.</p>
                 <p class="chart-title"># of Songs by the year in which they were written, first performed, published,
@@ -121,12 +128,31 @@
                 </div>
                 <p class="chart-title">US Gambling Crimes vs # of ATMs per 100,000 adults in Denmark</p>
                 <div class="csv-pull1">
-                    <img src="../styles/motor_vehicle_theftChinaUSExchangeRate.png"
+                    <img src="../styles/gamblingATM_DNK.png"
                         alt="US Gambling Crimes vs # of ATMs per 100,000 adults in Denmark">
                 </div>
 
-                <p>Here you can explore other series.</p>
-                <div>
+                <p>Here you can explore other series (sorry no support for Internet Explorer).</p>
+
+                <div class="drop-down">
+                    <form id="series1">
+                        <select class="selectVal s1">
+                            <option>Choose a series</option>
+                        </select>
+                    </form>
+                    <form id="series2">
+                        <select class="selectVal s2">
+                            <option>Choose a series</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="btn-div1">
+                    <button class="see-more-btn1">generate chart</button>
+                </div>
+                <div class="google-chart">
+                    <p><i>Charts may not look exactly as the ones above due to different y-axis ranges in Matplotlib
+                            (Python) and Google Charts (JavaScript)</i></p>
+                    <div id="curve_chart"></div>
 
                 </div>
                 <p>Here is a full list of data sources I used</p>
@@ -138,7 +164,7 @@
                             target="_blank"> The World Bank</a></li>
                     <li class="li"><i class="far fa-smile"></i><a
                             href="https://www.thebalance.com/unemployment-rate-by-year-3305506" class="a"
-                            target="_blank"> Annual Unemployment Rate</a></li>
+                            target="_blank"> US Annual Unemployment, GDP, and Inflation Data</a></li>
                     <li class="li"><i class="far fa-smile"></i><a href="https://spacelaunchreport.com/logyear.html"
                             class="a" target="_blank"> Space Launches</a></li>
                     <li class="li"><i class="far fa-smile"></i><a
@@ -152,7 +178,16 @@
                     <li class="li"><i class="far fa-smile"></i><a href="https://ucr.fbi.gov/crime-in-the-u.s" class="a"
                             target="_blank"> US Crime Data</a></li>
                     <li class="li"><i class="far fa-smile"></i><a href="https://fred.stlouisfed.org/" class="a"
-                            target="_blank"> Federal Reserve Bank of St. Louis</a></li>
+                            target="_blank"> Federal Reserve Bank of St. Louis (Exchange Rates, Commodity Prices, Russian Time Series) </a></li>
+                    <li class="li"><i class="far fa-smile"></i><a
+                            href="https://inflationdata.com/articles/inflation-adjusted-prices/historical-crude-oil-prices-table/"
+                            class="a" target="_blank"> Historical Crude Oil Prices</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a
+                            href="https://www.eia.gov/uranium/marketing/summarytable1b.php" class="a" target="_blank">
+                            Uranium Marketing Annual Report</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a
+                            href="https://www.eia.gov/coal/annual/" class="a" target="_blank">
+                            US Annual Coal Report</a></li>
                 </ul>
             </div>
         </div>

@@ -62,12 +62,12 @@
                         <li class="li"><i class="far fa-grin-alt"></i> Compliant and Secure ML</li>
                         <li class="li"><i class="far fa-grin-alt"></i> Productionalizing R workloads using SageMaker featuring Siemens</li>
                     </ul>
-                    <p>What I really liked about these talks is that they emphasized the importance of model deployment which is commonly overlooked by data scientists. It also made me think about secure setup of an ML environment. And sure, this is something that's frequently handled by network engineers or an IT department, but it doesn't mean that we shouldn't know what type of permissions we should have when working on ML projects and how to ensure that what we do is secure.</p>
+                    <p>What I really liked about these talks is that they emphasized the importance of model deployment which is commonly overlooked by data scientists. It also made me think more about setting up a secure ML environment to ensure that no training, real life data or models can be accessed without authorization. And sure, this is something that's frequently handled by network engineers or an IT department, but it doesn't mean that we shouldn't know what type of permissions we should have when working on ML projects and how to ensure that what we do is secure.</p>
                     <p>While Python may feel as a more suitable language when working with <b>SageMaker</b>, R is also fully supported. Your options are similar to the ones in Python. You can use RStudio with <code class="code">reticulate</code> library, <b>SageMaker</b> notebook or AWS CLI.</p>
                     <p>Going back to the MLOps aspect, a lot of <b>SageMaker</b> talks also include <b>AWS Step Functions</b>  architecture which seems to be a great combination for most ML projects.</p>
                     <h4 class="blue">AWS Step Functions</h4>
                     <p><b>AWS Step Functions</b> is a serverless function orchestrator that can be used to sequence <b>AWS Lambdas</b> and various AWS services. They are created using Amazon State Language which is JSON based.</p>
-                    <p>You can perform a task with <b>AWS Step Functions</b>, execute branches in parallel (in addition to sequential calls), add conditional logic, add human intervention and add error catching.</p>
+                    <p>You can perform a task with <b>AWS Step Functions</b>, execute branches in parallel (in addition to sequential calls), add conditional logic, add human intervention and  error catching.</p>
                     <p>If you have an application that consists of calling multiple Lambdas or AWS services, you may want to seriously consider <b>AWS Step Functions</b>.</p>
                     <p>AWS has tons of resources on Step Functions which you can find <a href="https://docs.aws.amazon.com/step-functions/latest/dg/getting-started.html" class="link" target="_blank">Here</a>.</p>
                     <h4 class="blue">DynamoDB</h4>
@@ -79,10 +79,10 @@
                     <h4 class="blue">Amazon Comprehend</h4>
                     <p>McDonald's had an interesting talk on how they are utilizing AWS architecture to gain insights from customer surveys. </p>
                     <p>One of the services that McDonald's uses is <b>Amazon Comprehend</b> which allows them to perform various text analytics tasks, such as sentiment analysis, named entity recognition, keywords search on over 20M of open comments from their customer surveys. </p>
-                    <p>McDonald's not fully relying on Comprehend, however, because it doesn't always pick the right sentiment. Their example was "Fries were cold" was flagged as neutral sentiment, but AWS architecture allows them to integrate NLP models built in-house to enhance accuracy.</p>
+                    <p class="last-p">McDonald's doesn't fully rely on Comprehend due to its limitations when it comes to domain-specific data. Their example  "Fries were cold" was flagged as neutral sentiment, but AWS architecture allows to integrate NLP models built in-house to enhance accuracy.</p>
 
-                    <p class="last-p">While I can't say that these talks gave an in-depth overview of certain products or provided me with details on how to exactly do something, they gave me enough examples of services that I should look into and their applications, which I think is the intent of these talks anyway.</p>
-                    <p>I'm looking forward to next weeks sessions and will post my recap at the end of each week.</p>
+                    <p >While I can't say that these talks gave an in-depth overview of certain products or provided me with details on how to exactly acomplish certain tasks, they gave me enough examples of services that I should look into and their applications, which I think is the intent of these talks anyway.</p>
+                    <p>I'm looking forward to more sessions in the next two weeks and will post my recap at the end of each week.</p>
                     <p>Feel free to leave your feedback on any other sessions that you found useful, or if you would like me to provide more recap on some of the sessions I mentioned above.</p>
                 </div>
             </section>
