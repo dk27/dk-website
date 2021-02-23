@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179618911-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-179618911-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Don't You Love Data? AWS Reinvent2020 Week1</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../main.js"></script> 
+    <script src="https://kit.fontawesome.com/183f710d87.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div><a href="../index.html"><img src="../styles/logo2.jpg" alt="logo" class="logo"></a></div>
+            <ul class="firstUL">
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html" class="about">about</a></li>
+                <li><a href="../archive.html">archive</a></li>
+                <li><a href="../contact.html" class="contact">contact</a></li>
+                <!-- <button class="hamburger"><i class="fas fa-bars"></i><p class="sr-only">Click here to open up hamburger menu</p></button> -->
+            </ul>
+        </nav>
+        <div class="wrapper header-flex">
+            <h1>Don't you love data?</h1>
+            <h2>Data Science Blog</h2>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <section>
+                <div class="data-pulling-section">
+                    <h2 class="page-title">AWS reInvent 2020 Week2 Overview</h2>
+                    <h3>December 11th, 2020</h3>
+                    <div class="csv-pull1">
+                        <img src="../styles/aws-wk2.png"
+                            alt="reInvent KeyNote screenshot">
+                    </div>
+                    <p>Welcome to my week 2 of <a href="https://reinvent.awsevents.com" class="link" target="_blank"> AWS reInvent</a> recap. A lot of exciting things happened this week including the first-ever Machine Learning Keynote. I posted a lot on LinkedIn and Twitter this week, so I'll do a quick recap with my top 5 list.</p>  
+                    <h4 class="blue">5. Data Wrangler</h4>             
+                    <p>I think this was a logical product for AWS to build. They figured out model training and deployment first. It only made sense to develop a tool for data preparation. </p>
+                    <p>AWS claims that SageMaker Data Wrangler is the fastest way to prepare data for ML. Data Wrangler can perform hundreds of data transformations, explore, diagnose and fix potential data issues. </p>
+                    <p>Based on my limited research, it doesn't look like it can help you with data extraction, aggregation, joins, and filtering, so you still need to apply your domain and data knowledge to get your data semi-prepped and hand it off to Data Wrangler for further diagnostics/feature engineering.</p>
+                    <h4 class="blue">4. Aurora, Redshift and Neptune ML</h4>             
+                    <p>AWS integrated some ML capabilities into their databases. Aurora was announced earlier this year followed by Redshift and Neptune (their graph database). This feature eliminates any coding typically done by data scientists to train models and instead use a SQL query. </p>
+                    <p>I'm curious about graph databases in general and how you can use graph data for ML since a lot of models expect tabular data, so I think Neptune ML is the most exciting announcement in this category. I can't say that I'll be jumping into Aurora or Redshift ML any time soon, but it does look like AWS is trying to make ML building more accessible to people with limited to no data science skills.</p>
+                    <h4 class="blue">3. NFL + AWS =  <i class="far fa-grin-alt"></i></h4>             
+                    <p>There were several examples of companies (ranging from food delivery to medical research) mentioned during the ML Keynote and how they use AWS to drive business impact. The NFL was one of their examples.  </p>
+                    <p>NFL uses AWS SageMaker to analyze on-field injuries using hundreds of variables including speed, direction, contact, play type and nature of impact in machine learning and deep learning models. They aim to improve protective equipment with the goal of reducing concussions and other types of injuries (foot, ankle, knee, etc.). My knowledge of American football is very limited, but it's great to see that the NFL utilizes analytics to make this game safer.</p>
+                    <h4 class="blue">2. SageMaker Clarify</h4> 
+                    <p>There are so many great things about this tool! First, it detects bias in your data and training models. Clarify is a great step toward more ethical AI introduced into a ML platform used by millions of users.</p>
+                    <p>In addition to bias detection, it also now supports Machine Learning Interpretability features. "Accuracy vs Explainability trade-off" is one reason that drives model selection especially in highly regulated areas, so I think it's helpful that AWS finally added it to SageMaker.</p>
+                    <p>Quite frankly, I'm not sure why it hasn't been added sooner. H2O has had explainability in their Driverless AI for a couple of years and has shared tons of open source resources on MLI. I guess it's better late than never. </p>
+                    <p> Clarify seems to support Shapley values which is a hot topic in the data science community and a really explainable way to quantify individual variables' impact on predictions. I couldn't find other local or global MLI methodologies, but I suspect Shapley Values is a great start!</p>   
+                    <h4 class="blue">1. Using AI to automate clinical workflows </h4>             
+                    <p>Wow! This was impressive! The amount of progress AWS has made in OCR, voice recognition and NLP is incredible.</p>
+                    <p>The first part of this talk covered Comprehend Medical and Transcribe Medical that was trained specifically to understand medical vocabulary. It's a nice addition to their core Comprehend and Transcribe products, and I think it's a matter of time before AWS expands these products to other industries.</p> 
+                    <p class="last-p">The second part of the talk focused on "Document Understanding Solution" that extracts text from documents, identifies various named entities, and makes these data easily searchable by utilizing Elastic Search & Kendra. An added bonus is that you can redact any sensitive data from search. This solution uses AWS Textract (their OCR solution) and Comprehend Medical. <a href="https://aws.amazon.com/solutions/implementations/document-understanding-solution/" class="link" target="_blank">Here</a> is a detailed explanation of the solution. </p>
+                                   
+                    <p >What did you like the most about week 2?</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="hyvor-talk-view" style="max-width:100%;width: 700px; margin:auto"></div>
+        <script type="text/javascript">
+            var HYVOR_TALK_WEBSITE = 2498; // DO NOT CHANGE THIS
+            var HYVOR_TALK_CONFIG = {
+                url: "http://www.dontyoulovedata.com/misc/awsreinvent2020-w2.html",
+                id: 3
+            };
+        </script>
+        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p>Copyright 2020 Don't You Love Data</p>
+        </div>
+    </footer>
+</body>
+
+</html>

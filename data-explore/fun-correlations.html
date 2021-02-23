@@ -44,44 +44,51 @@
         <div class="wrapper">
             <div class="spacex">
                 <h2 class="page-title">Odd Correlations</h2>
-                <h3>November 29th, 2020</h3>
+                <h3>December 7th, 2020</h3>
                 <div class="csv-pull1">
                     <img src="../styles/pexels-pixabay-269318.jpg" alt="Lightbulb image from Pexels">
                 </div>
                 <p>A few years ago I discovered a fun website <a href="https://www.tylervigen.com/spurious-correlations"
                         class="link">Spurious Correlations</a>. When two variables are highly correlated (negatively or
-                        positively), and if that correlation doesn't seem to make any sense, that's when we call it spurious.
+                    positively), and if their correlation doesn't seem to make any sense, that's when we call it
+                    spurious.
                 </p>
                 <p>I started working on this post a few months ago, and quite frankly collecting data and finding
                     patterns was frustrating. There are a lot more data sources that I'd like to explore, so I'm
                     planning on collecting more data over time and expanding this post. For now, I'll share some
                     exhibits that I found interesting.</p>
                 <p>For the purpose of this post, I compiled a dataset with over 1,600 of columns from a variety of
-                    sources including the World Bank, Federal Reserve Bank of St. Louis, EIA, FBI, Wikipedia, etc.</p>
-                <p>A few interesting spurious relationships I found (in case you don't feel like scrolling down). Dairy
+                    sources including the World Bank, Federal Reserve Bank of St. Louis, EIA, FBI, Wikipedia, and a few
+                    others (full list is below).</p>
+                <p>Here are a few interesting spurious relationships I found (in case you don't feel like scrolling
+                    down). Dairy
                     consumption in the US seems to correlate with a lot of not so good things including increased CO2
                     emissions in certain countries. While I can buy this trend (not the magnitude of the correlation
                     coefficient), it's also correlated with different types of crimes in the US with milk, cottage
                     cheese and regular ice cream being the worst offenders. Butter and cheese consumption, on the other
-                    hand, is negatively correlated with various types of crime in the US, so keep eating butter with
-                    cheese. </p>
+                    hand, are negatively correlated with various types of crime in the US. Should American people
+                    increase butter and
+                    cheese consumption to keep crime at bay? We would need to do a different analysis to study any
+                    potential causal relationship. </p>
                 <div class="csv-pull1">
                     <img src="../styles/crime_dairy_corr1.png" alt="Crime Dairy Correlation Matrix">
                 </div>
 
-                <p>You can find my Jupyter notebook here.</p>
+                <p>You can find my Jupyter notebook <a
+                        href="https://github.com/dk27/dk-website/blob/master/code/Odd%20Correlations.ipynb" class="link"
+                        target="_blank">Here</a>.</p>
                 <p class="chart-title"># of Songs by the year in which they were written, first performed, published,
                     recorded, or released vs CO2 Emissions (metric tons per capita) in Dominica </p>
                 <div class="csv-pull1">
                     <img src="../styles/SongsCO2DMA.png" alt="Songs vs CO2 in DMA">
                 </div>
-                <p class="chart-title">China/US Foreign Echange Rate vs Renewable Electricity Output (as % of Total
+                <p class="chart-title">China/US Foreign Ecchange Rate vs Renewable Electricity Output (as % of Total
                     Electricity Output) in Arab World</p>
                 <div class="csv-pull1">
                     <img src="../styles/ChinaUSExchangeRateRenewalEnergyConsumptionARB.png"
                         alt="China US Exchange Rate vs Renewable Electricity Output in Arab Wolrd">
                 </div>
-                <p class="chart-title">Mexico/US Foregin Exchange Rate vs Air Transport, Registered Carrier Departures
+                <p class="chart-title">Mexico/US Foreign Exchange Rate vs Air Transport, Registered Carrier Departures
                     in Vietnam</p>
                 <div class="csv-pull1">
                     <img src="../styles/MexicoUSExchangeRateAirDepartureVNM.png"
@@ -96,7 +103,7 @@
                     Population in South Korea (% of Total Population) in South Korea</p>
                 <div class="csv-pull1">
                     <img src="../styles/GovGRSDebtRussiaRuralPopulationKOR.png"
-                        alt="Governemnt Debt in Russia vs Rural Population in South Korea">
+                        alt="Government Debt in Russia vs Rural Population in South Korea">
                 </div>
                 <p class="chart-title">Banana Price vs # of ATMs per 100,000 adults in Lebanon</p>
                 <div class="csv-pull1">
@@ -106,9 +113,9 @@
                 </p>
                 <div class="csv-pull1">
                     <img src="../styles/MilkRuralPopulationPRK.png"
-                        alt="Milk Consumption vs Rural Populationg in North Korea">
+                        alt="Milk Consumption vs Rural Population in North Korea">
                 </div>
-                <p class="chart-title">Cottage Cheese Constumption in the US vs US Forgery Crime</p>
+                <p class="chart-title">Cottage Cheese Consumption in the US vs US Forgery Crime</p>
                 <div class="csv-pull1">
                     <img src="../styles/cottage cheeseforgery.png" alt="Cottage Cheese Consumption vs Forgery">
                 </div>
@@ -116,10 +123,10 @@
                 <div class="csv-pull1">
                     <img src="../styles/yogurtCO2CHN.png" alt="US Yogurt Consumption vs CO2 in China">
                 </div>
-                <p class="chart-title"># of Unmannged Space Launches vs # of ATMs per 100,000 adults in Afghanistan</p>
+                <p class="chart-title"># of Unmanned Space Launches vs # of ATMs per 100,000 adults in Afghanistan</p>
                 <div class="csv-pull1">
                     <img src="../styles/Launch  UnmannedATM_AFG.png"
-                        alt="# of Unmannged Space Launches vs # of ATMs per 100,000 adults in Afghanistan">
+                        alt="# of Unmanned Space Launches vs # of ATMs per 100,000 adults in Afghanistan">
                 </div>
                 <p class="chart-title">US Motor Vehicle Theft vs China/US Foreign Exchange Rate</p>
                 <div class="csv-pull1">
@@ -132,7 +139,9 @@
                         alt="US Gambling Crimes vs # of ATMs per 100,000 adults in Denmark">
                 </div>
 
-                <p>Here you can explore other series (sorry no support for Internet Explorer).</p>
+                <p>Here you can explore other series (sorry no support for Internet Explorer). You can view JS code that
+                    powers this chart <a href="https://github.com/dk27/dk-website/blob/master/odd_correlations_data.js"
+                        class="link" target="_blank">Here</a></p>
 
                 <div class="drop-down">
                     <form id="series1">
@@ -150,7 +159,8 @@
                     <button class="see-more-btn1">generate chart</button>
                 </div>
                 <div class="google-chart">
-                    <p><i>Charts may not look exactly as the ones above due to different y-axis ranges in Matplotlib
+                    <p><i>Charts may not look exactly as the ones above due to different default y-axis ranges in
+                            Matplotlib
                             (Python) and Google Charts (JavaScript)</i></p>
                     <div id="curve_chart"></div>
 
@@ -178,16 +188,20 @@
                     <li class="li"><i class="far fa-smile"></i><a href="https://ucr.fbi.gov/crime-in-the-u.s" class="a"
                             target="_blank"> US Crime Data</a></li>
                     <li class="li"><i class="far fa-smile"></i><a href="https://fred.stlouisfed.org/" class="a"
-                            target="_blank"> Federal Reserve Bank of St. Louis (Exchange Rates, Commodity Prices, Russian Time Series) </a></li>
+                            target="_blank"> Federal Reserve Bank of St. Louis (Exchange Rates, Commodity Prices,
+                            Russian Time Series) </a></li>
                     <li class="li"><i class="far fa-smile"></i><a
                             href="https://inflationdata.com/articles/inflation-adjusted-prices/historical-crude-oil-prices-table/"
                             class="a" target="_blank"> Historical Crude Oil Prices</a></li>
                     <li class="li"><i class="far fa-smile"></i><a
                             href="https://www.eia.gov/uranium/marketing/summarytable1b.php" class="a" target="_blank">
                             Uranium Marketing Annual Report</a></li>
-                    <li class="li"><i class="far fa-smile"></i><a
-                            href="https://www.eia.gov/coal/annual/" class="a" target="_blank">
+                    <li class="li"><i class="far fa-smile"></i><a href="https://www.eia.gov/coal/annual/" class="a"
+                            target="_blank">
                             US Annual Coal Report</a></li>
+                    <li class="li"><i class="far fa-smile"></i><a href="https://www.ncdc.noaa.gov/climate-information/statistical-weather-and-climate-information" class="a"
+                            target="_blank">
+                            Temperature Information</a></li>
                 </ul>
             </div>
         </div>
